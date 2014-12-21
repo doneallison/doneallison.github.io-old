@@ -425,7 +425,7 @@
 
 <p>Next, I looped through the <strong>Calls</strong> folder and built an array of individual text messages:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -439,55 +439,59 @@
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>require 'nokogiri'
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;nokogiri&#39;</span>
 </span><span class='line'>
-</span><span class='line'>messages = []
+</span><span class='line'><span class="n">messages</span> <span class="o">=</span> <span class="o">[]</span>
 </span><span class='line'>
-</span><span class='line'>Dir.foreach("Voice/Calls/") do |file|
-</span><span class='line'>  if file.include?("Text") && (file.include?("5555551234") || file.include?("Jane Doe"))
-</span><span class='line'>    current_file = File.open("Voice/Calls/#{file}")
-</span><span class='line'>    page_to_parse = Nokogiri::HTML(current_file)
-</span><span class='line'>    current_file.close    
-</span><span class='line'>    page_to_parse.css("div.message q").each do |x|
-</span><span class='line'>      messages &lt;&lt; x.content
-</span><span class='line'>    end
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="no">Dir</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="s2">&quot;Voice/Calls/&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;5555551234&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">current_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Voice/Calls/</span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">page_to_parse</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">current_file</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">current_file</span><span class="o">.</span><span class="n">close</span>
+</span><span class='line'>    <span class="n">page_to_parse</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;div.message q&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">messages</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="o">.</span><span class="n">content</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>In this code, I first create a <code>messages</code> array and set it equal to an empty array.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>messages = []</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">messages</span> <span class="o">=</span> <span class="o">[]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Then, I loop through the <code>Voice/Calls/</code> directory and look for files that include the word &ldquo;Text&rdquo; and my girlfriend&rsquo;s name or phone number (name and number changed to protect the innocent!).</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Dir.foreach("Voice/Calls/") do |file|
-</span><span class='line'>  if file.include?("Text") && (file.include?("5555551234") || file.include?("Jane Doe"))</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Dir</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="s2">&quot;Voice/Calls/&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;5555551234&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">file</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Then, I open each matching file, assign it to a variable called <code>page_to_parse</code>, and tell Nokogiri to treat the object as HTML.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>current_file = File.open("Voice/Calls/#{file}")
-</span><span class='line'>page_to_parse = Nokogiri::HTML(current_file)
-</span><span class='line'>current_file.close    
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">current_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Voice/Calls/</span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">page_to_parse</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">current_file</span><span class="p">)</span>
+</span><span class='line'><span class="n">current_file</span><span class="o">.</span><span class="n">close</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>Finally, the magic happens: Nokogiri&rsquo;s CSS selectors automagically extract all the content between <code>&lt;q&gt;</code> tags in the <code>message</code> class (where the text messages happened to be stored in the HTML pages I downloaded from Google Takeout) and shovel each text message into my <code>messages</code> array.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>page_to_parse.css("div.message q").each do |x|
-</span><span class='line'>  messages &lt;&lt; x.content
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page_to_parse</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s2">&quot;div.message q&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">messages</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="o">.</span><span class="n">content</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This left me with a nice array of 10,404 text messages. The next challenge was to convert those text messages into a format that MALLET understands.</p>
@@ -504,16 +508,17 @@
 
 <p>Since I was dealing with a large number of &ldquo;documents&rdquo; (text messages), I decided it would be simpler to go with the first option. Back to Ruby!</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>File.open("mallet-2.0.7/texts.txt", "w+") do |x|
-</span><span class='line'>  messages.each_with_index do |message, index|
-</span><span class='line'>    x.puts("#{index} texts #{message}")
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;mallet-2.0.7/texts.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">messages</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">x</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">index</span><span class="si">}</span><span class="s2"> texts </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>In this code, I create a new text file called <code>texts.txt</code> in the same directory as the MALLET program files. Then, I iterate through the <code>messages</code> array and write each element to a new line in <code>texts.txt</code>, with an index number and the word &ldquo;texts&rdquo; appended to the front.</p>
@@ -526,14 +531,16 @@
 
 <p>After <a href="http://mallet.cs.umass.edu/download.php">installing MALLET</a>, my first step in interacting with the program was to navigate to its directory.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd mallet-2.0.7</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">cd</span> <span class="n">mallet</span><span class="o">-</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">7</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Next, I had to import my <code>texts.txt</code> file and convert it into a form that MALLET can handle. I did this with the <code>import-file</code> command:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bin/mallet import-file --input texts.txt --output texts.mallet --keep-sequence --remove-stopwords</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">bin</span><span class="o">/</span><span class="n">mallet</span> <span class="n">import</span><span class="o">-</span><span class="n">file</span> <span class="o">--</span><span class="n">input</span> <span class="n">texts</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">output</span> <span class="n">texts</span><span class="o">.</span><span class="n">mallet</span> <span class="o">--</span><span class="n">keep</span><span class="o">-</span><span class="n">sequence</span> <span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">stopwords</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This command has several parameters:</p>
@@ -548,8 +555,9 @@
 
 <p>After running the command, I ended up with a <code>texts.mallet</code> file, and I was ready to generate some models. I did this with the <code>train-topics</code> command:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bin/mallet train-topics --input texts.mallet --num-topics 25 --output-state texts-state.gz --output-topic-keys texts_keys.txt --output-doc-topics texts_compostion.txt</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">bin</span><span class="o">/</span><span class="n">mallet</span> <span class="n">train</span><span class="o">-</span><span class="n">topics</span> <span class="o">--</span><span class="n">input</span> <span class="n">texts</span><span class="o">.</span><span class="n">mallet</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">topics</span> <span class="mi">25</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">state</span> <span class="n">texts</span><span class="o">-</span><span class="n">state</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">topic</span><span class="o">-</span><span class="n">keys</span> <span class="n">texts_keys</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">doc</span><span class="o">-</span><span class="n">topics</span> <span class="n">texts_compostion</span><span class="o">.</span><span class="n">txt</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Again, this command includes several parameters:</p>
