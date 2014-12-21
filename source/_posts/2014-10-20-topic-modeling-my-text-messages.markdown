@@ -24,7 +24,7 @@ For the purposes of this project, all I needed was the **Calls** folder. Since t
 
 Next, I looped through the **Calls** folder and built an array of individual text messages:
 
-```
+```ruby
 require 'nokogiri'
 
 messages = []
@@ -42,20 +42,20 @@ end
 ```
 In this code, I first create a `messages` array and set it equal to an empty array.
 
-```
+```ruby
 messages = []
 ```
 
 Then, I loop through the `Voice/Calls/` directory and look for files that include the word "Text" and my girlfriend's name or phone number (name and number changed to protect the innocent!).
 
-```
+```ruby
 Dir.foreach("Voice/Calls/") do |file|
   if file.include?("Text") && (file.include?("5555551234") || file.include?("Jane Doe"))
 ```
 
 Then, I open each matching file, assign it to a variable called `page_to_parse`, and tell Nokogiri to treat the object as HTML.
 
-```
+```ruby
     current_file = File.open("Voice/Calls/#{file}")
     page_to_parse = Nokogiri::HTML(current_file)
     current_file.close    
@@ -63,7 +63,7 @@ Then, I open each matching file, assign it to a variable called `page_to_parse`,
 ```
 Finally, the magic happens: Nokogiri's CSS selectors automagically extract all the content between `<q>` tags in the `message` class (where the text messages happened to be stored in the HTML pages I downloaded from Google Takeout) and shovel each text message into my `messages` array.
 
-```
+```ruby
     page_to_parse.css("div.message q").each do |x|
       messages << x.content
     end
@@ -78,7 +78,7 @@ According to [MALLET's website](http://mallet.cs.umass.edu/import.php), users ca
 
 Since I was dealing with a large number of "documents" (text messages), I decided it would be simpler to go with the first option. Back to Ruby!
 
-```
+```ruby
 File.open("mallet-2.0.7/texts.txt", "w+") do |x|
   messages.each_with_index do |message, index|
     x.puts("#{index} texts #{message}")
