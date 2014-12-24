@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-21T23:43:29-05:00</updated>
+  <updated>2014-12-23T22:30:48-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a Development Environment on My Corporate Laptop]]></title>
+    <link href="http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop/"/>
+    <updated>2014-12-23T22:21:47-05:00</updated>
+    <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop</id>
+    <content type="html"><![CDATA[<h2>Background and Motivation</h2>
+
+<p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.</p>
+
+<p>Don&rsquo;t get me wrong; it could be worse. Apart from its horrendous touchpad, the T440 isn&rsquo;t a bad computer. It even has a pretty good display, especially if you haven&rsquo;t yet been spoiled by a Retina Display. For a software developer, however, the T440 has a major flaw: it runs Windows 7. This is a problem not because Windows 7 is bad, but because Windows 7, like all other versions of Windows, is incompatible with <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a>.</p>
+
+<p>First released in 1988, POSIX (Portable Operating System Interface) is a set of standards for designing operating systems. It reduces compatibility issues between compliant operating systems by defining common <a href="http://en.wikipedia.org/wiki/Application_programming_interface">APIs</a> and system utilities. POSIX is supported to some degree by most Unix-like operating systems, including Mac OS X (fully POSIX compliant) and GNU/Linux (mostly POSIX compliant).</p>
+
+<p>Since many software developers use Unix-like systems to write or deploy code, having a POSIX-compliant system makes it easier to share code with other developers. Moreover, I&rsquo;ve spent the last three months developing habits in a POSIX-compliant environment. Switching now would mean accepting a steep new learning curve to learn tools and patterns with limited relevance outside the (decreasingly important) Windows universe. Accordingly, I decided to research ways of bringing POSIX to the workplace.</p>
+
+<h2>Making Windows POSIX-Compliant</h2>
+
+<p>Since my bosses are unlikely to spring for a Macbook Pro, and since I can&rsquo;t simply wipe Windows 7 and install a fresh copy of Ubuntu, I had to find some way of creating a POSIX-compliant environment within Windows 7. After a bit of research, two popular alternatives emerged: Cygwin and virtualization.</p>
+
+<h3>Cygwin</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> is a Windows program that provides a Unix-like command line and some degree of POSIX compliance. Although I don&rsquo;t fully understand Cygwin and could certainly be selling it short, it seems most valuable in providing a Unix-like alternative to Windows&#8217; stock Command Prompt. If you want to do something more complex, like use RVM to manage multiple versions of Ruby, my sense is that you begin to reach Cygwin&rsquo;s limits. In addition, Cygwin would likely involve somewhat of a learning curve. For these reasons, I decided to leave Cygwin as an alterantive to explore if my preferred option, virtualization, didn&rsquo;t work.</p>
+
+<h3>Virtualization</h3>
+
+<p>In the context of this post, <a href="http://en.wikipedia.org/wiki/Virtualization">virtualization</a> refers to the process of running a virtual instance of one computer atop the resources of a second, actual computer. Virtualization seemed like a compelling solution to the problem of bringing POSIX to Windows because it promised the ability to run mostly POSIX-compliant GNU/Linux atop Windows 7. In other words, I&rsquo;d be able to run GNU/Linux on my work computer without wiping or partitioning the hard drive.</p>
+
+<p>Virtualization, of course, is not magic. It comes with a performance penalty. Since the <em>host</em> operating system (in my case, Windows 7) has to share physical resources like RAM with the <em>guest</em> operating system (in my case, GNU/Linux), both systems take a performance hit. Thankfully, though, the type of software development I plan on doing is not especially resource-intensive. Accordingly, I decided to build a virtual GNU/Linux machine to run atop my company-issued laptop.</p>
+
+<p>Since I&rsquo;m traveling for the holidays and don&rsquo;t have access to the T440, I decided to create the virtual machine (VM) on my Macbook Pro and then transfer it later to the T440. My ability to do this highlights one of the beautiful aspects of virtualization: that the guest OS is agnostic about its host as long as the host has compatible virtualization software and sufficient physical resources. When it comes time to move the VM, all I&rsquo;ll have to do is copy over a single image file.</p>
+
+<h2>Choosing and Obtaining Software</h2>
+
+<p>For the actual virtualization software, I went with <a href="https://www.virtualbox.org/">VirtualBox</a>. It&rsquo;s not quite as polished as something like VMWare, but it&rsquo;s powerful, cross-platform, and free. For the GNU/Linux distribution, I went with <a href="http://lubuntu.net/">Lubuntu</a>, which is based on <a href="http://www.ubuntu.com/desktop">Ubuntu</a> but uses the light-weight <a href="http://lxde.org/">LXDE</a> desktop environment. Lubuntu is a good fit because it was designed with resource-constrained systems in mind but is largely compatible with Ubuntu, which has a large, active, and helpful community. Since I decided I could only devote 1GB of RAM to the birtual machine, I grabbed the 32-bit version of Lubuntu from the <a href="https://help.ubuntu.com/community/Lubuntu/GetLubuntu#Standard_PC">official downloads page</a>.</p>
+
+<h2>Creating the Virtual Machine</h2>
+
+<p>Having installed VirtualBox and downloaded the ~740MB Lubuntu .iso, I was ready to get started. The first step was to create the VM in VirtualBox. During this process, I accepted most of the defaults apart from selecting the correct OS (32-bit Ubuntu Linux), entering a unique name (&ldquo;devenv&rdquo;), and changing the default memory allocation from 512MB to 1024MB.</p>
+
+<div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('xh35wRElX6U');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/xh35wRElX6U?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
+<a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/xh35wRElX6U/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=xh35wRElX6U" id="xh35wRElX6U" onclick="return false;">
+<div class="youtube-lazy-link-div"></div>
+<div class="youtube-lazy-link-info">Creating a Virtual Machine with VirtualBox</div>
+</a>
+<div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
+</div>
+
+
+<p>The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Since I hadn&rsquo;t installed an operating system yet, VirtualBox prompted me to select the media or image to boot from. I selected the Lubuntu .iso, and VirtualBox began running it in a separate window. From that point on, I followed a standard installation process in the VM. (Please note: The video below has been edited for length. The actual installation process took about 11 minutes on my computer.)</p>
+
+<div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('724Ey73Q2n8');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/724Ey73Q2n8?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
+<a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/724Ey73Q2n8/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=724Ey73Q2n8" id="724Ey73Q2n8" onclick="return false;">
+<div class="youtube-lazy-link-div"></div>
+<div class="youtube-lazy-link-info">Installing Lubuntu within a VirtualBox Virtual Machine</div>
+</a>
+<div class="video-info" >This video was created to complement a blog post at http://doneallison.com.
+
+Please note: This video has been edited to reduce its overall length. The actual installation process took about 11 minutes.</div>
+</div>
+
+
+<p>After completing the installation process, I rebooted the VM to arrive at my fresh Lubuntu desktop.</p>
+
+<p><img class="center" src="http://doneallison.github.io/images/corporate-environment/lubuntu_desktop.png"></p>
+
+<h2>Incorporating Guest Additions</h2>
+
+<p>After booting the VM, the first thing I noticed was how low the resolution was - only 640x480. In an effort to fix this, I clicked <code>Start &gt; Preferences &gt; Monitor Settings</code>. This brought up the menu I was looking for, but the only other option was &ldquo;Auto.&rdquo; This setting didn&rsquo;t change anything, so I started Googling around. It turns out that I needed to install a VirtualBox package called &ldquo;Guest Additions&rdquo; on the VM. Although the image needed to install Guest Additions comes bundled with VirtualBox, it&rsquo;s not the easiest thing to find and install. After some experimentation, I got it to work with the process described below. Please note that steps 1-4 may vary on non-Mac systems; however, it basically just involves copying a file to a convenient directory and then later selecting that file.</p>
+
+<div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('Y2TcQK49pbA');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/Y2TcQK49pbA?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
+<a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/Y2TcQK49pbA/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=Y2TcQK49pbA" id="Y2TcQK49pbA" onclick="return false;">
+<div class="youtube-lazy-link-div"></div>
+<div class="youtube-lazy-link-info">Installing Guest Additions in VirtualBox with Mac Host and Lubuntu Guest</div>
+</a>
+<div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
+</div>
+
+
+<ol>
+<li>Copy <code>VBoxGuestAdditions.iso</code> image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: <code>sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/</code></li>
+<li>Start the VM and log in.</li>
+<li>On the VirtualBox menu, go to <code>Devices &gt; CD/DVD Devices &gt; Choose a virtual CD/DVD disk file...</code></li>
+<li>Navigate to the root directory and select the <code>VBoxGuestAdditions.iso</code> file you copied there in step 1.</li>
+<li>In the VM, close the autorun prompt that appears after a few moments and press <code>Ctrl + Alt + T</code> to open LXTerminal.</li>
+<li>Type <code>cd ../../media/USER</code>, where USER is your username (mine is &ldquo;don&rdquo;), to change into the VBoxGuestAdditions.iso directory.</li>
+<li>Type <code>ls</code> to show the contents of that directory. There should only be one directory, called something like <code>VBOXADDITIONS_4.3.20_96996</code> (it changes with each version). Type <code>cd</code> followed by a space and then the name of that directory to enter it. In practice, you can probably just type <code>cd V</code>, and then press tab to auto-complete the filename, and then press enter.</li>
+<li>Type <code>sudo apt-get update</code> to grab any updates to packages installed on your system.</li>
+<li>Type <code>sudo apt-get upgrade</code> to install those updates.</li>
+<li>Type <code>sudo apt-get install dkms</code> to install <a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">dkms</a>.</li>
+<li>Type <code>sudo sh VBoxLinuxAdditions.run</code> to install Guest Additions.</li>
+<li>Restart the VM.</li>
+</ol>
+
+
+<p>After following these steps, I restarted the VM and was able to put it in full-screen mode by pressing <code>Right ⌘ + F</code> (the default is <code>Left ⌘ + F</code>, but I changed it to right). Since Lubuntu puts the menu bar at the bottom of the screen, I removed the auto-hiding menu bar that VirtualBox puts on the bottom of the screen by default. I did this by right-clicking the VM in the VirtualBox sidebar, selecting <code>Advanced</code> on the <code>General</code> menu, and deselecting <code>Show in Fullscreen/Seamless</code>.</p>
+
+<p>The steps outlined in this post left me with a basic virtual machine that I will be able to run on my company-issued T440. But the VM still doesn&rsquo;t feel like <em>home</em>. In my next few posts, I&rsquo;ll cover a few of the other customizations I made to complete my corporate development environment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Debugging JavaScript]]></title>
@@ -151,7 +251,7 @@
 
 <p>Fortunately, many Mac users already have another JavaScript tool installed that handles multi-line pasting with ease: <a href="https://developer.chrome.com/devtools">Chrome DevTools</a>, &ldquo;a set of web authoring and debugging tools built into Google Chrome.&rdquo; DevTools can be launched by pressing <code>command + option + j</code> from within Google Chrome.</p>
 
-<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript_chromedevtools.png"></p>
+<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript/chromedevtools.png"></p>
 
 <p>Chrome DevTools are amazing, and I&rsquo;m confident I&rsquo;ll find myself using them more as I gain experience. As a novice, however, they feel mildly like overkill in situations when I simply want to test a single function or chunk of code. In addition, using DevTools for small tests requires me to copy code from my text editor and paste it into DevTools (or else edit my code directly in DevTools, missing out on JSHint, syntax highlighting, and other Sublime Text goodness). This takes time and can introduce additional errors (e.g., forgetting to copy a variable declaration that is relied upon in the code I do copy). For these reasons, I decided to look for something simpler.</p>
 
@@ -174,7 +274,7 @@
 
 <p>Then, when you have a JavaScript file open in Sublime Text and want to run it, you can just press <code>command + b</code>. (If this doesn&rsquo;t work, make sure the sublime-build you just created is selected by going to <code>Tools &gt; Build System</code> and selecting <code>node</code>). Sublime Text will build the code using Node.js and then display the result in a small window at the bottom of the editor.</p>
 
-<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript_js_console_in_sublime_text.png"></p>
+<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript/js_console_in_sublime_text.png"></p>
 
 <h4>Replacing pry</h4>
 
@@ -209,15 +309,15 @@
 
 <p>Then, you can open the file in Chrome, press <code>command + option + j</code> to open DevTools, click on the <code>Sources</code> tab, and press <code>command + r</code> to refresh and inspect your code.</p>
 
-<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript_devtools_sources.png"></p>
+<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript/devtools_sources.png"></p>
 
 <p>In this example, we can see that the <code>debugger</code> statement acts as a breakpoint - code execution is paused, and we can examine the current state of each variable under the &ldquo;Scope Variables&rdquo; window. Right now, <code>test1</code> has a value of &ldquo;Hello world!&rdquo;, but <code>test2</code> is still <code>undefined</code> because the <code>debugger</code> statement paused code execution. If we click twice the button to step into the next function call&hellip;</p>
 
-<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript_devtools_sources_button.png"></p>
+<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript/devtools_sources_button.png"></p>
 
 <p>&hellip;we&rsquo;ll see that <code>test2</code> is now assigned the value of <code>"Goodbye world!"</code>.</p>
 
-<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript_devtools_sources_2.png"></p>
+<p><img class="center" src="http://doneallison.github.io/images/debugging-javascript/devtools_sources_2.png"></p>
 
 <p>If you don&rsquo;t like inserting <code>debugger</code> statements into your code, you can also create a breakpoint by clicking the left margin of the center pane in the DevTools debugger, which will create a blue arrow indicating a breakpoint at the line selected.</p>
 
