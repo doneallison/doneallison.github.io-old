@@ -35,19 +35,23 @@ Having installed VirtualBox and downloaded the ~740MB Lubuntu .iso, I was ready 
 
 {% youtube xh35wRElX6U %}
 
+
 The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Since I hadn't installed an operating system yet, VirtualBox prompted me to select the media or image to boot from. I selected the Lubuntu .iso, and VirtualBox began running it in a separate window. From that point on, I followed a standard installation process in the VM. (Please note: The video below has been edited for length. The actual installation process took about 11 minutes on my computer.)
 
 {% youtube 724Ey73Q2n8 %}
 
+
 After completing the installation process, I rebooted the VM to arrive at my fresh Lubuntu desktop.
 
 {% img center /images/corporate-environment/lubuntu_desktop.png %}
+
 
 ##Incorporating Guest Additions
 
 After booting the VM, the first thing I noticed was how low the resolution was - only 640x480. In an effort to fix this, I clicked `Start > Preferences > Monitor Settings`. This brought up the menu I was looking for, but the only other option was "Auto." This setting didn't change anything, so I started Googling around. It turns out that I needed to install a VirtualBox package called "Guest Additions" on the VM. Although the image needed to install Guest Additions comes bundled with VirtualBox, it's not the easiest thing to find and install. After some experimentation, I got it to work with the process described below. Please note that steps 1-4 may vary on non-Mac systems; however, it basically just involves copying a file to a convenient directory and then later selecting that file.
 
 {% youtube Y2TcQK49pbA %}
+
 
 1. Copy `VBoxGuestAdditions.iso` image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: `sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/`
 1. Start the VM and log in.
