@@ -33,12 +33,12 @@ For the actual virtualization software, I went with [VirtualBox](https://www.vir
 ##Creating the Virtual Machine
 Having installed VirtualBox and downloaded the ~740MB Lubuntu .iso, I was ready to get started. The first step was to create the VM in VirtualBox. During this process, I accepted most of the defaults apart from selecting the correct OS (32-bit Ubuntu Linux), entering a unique name ("devenv"), and changing the default memory allocation from 512MB to 1024MB. 
 
-{% youtube xh35wRElX6U %}
-<br>
+<p>{% youtube xh35wRElX6U %}</p>
+
 The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Since I hadn't installed an operating system yet, VirtualBox prompted me to select the media or image to boot from. I selected the Lubuntu .iso, and VirtualBox began running it in a separate window. From that point on, I followed a standard installation process in the VM. (Please note: The video below has been edited for length. The actual installation process took about 11 minutes on my computer.)
 
-{% youtube 724Ey73Q2n8 %}
-<br>
+<p>{% youtube 724Ey73Q2n8 %}</p>
+
 After completing the installation process, I rebooted the VM to arrive at my fresh Lubuntu desktop.
 
 {% img center /images/corporate-environment/lubuntu_desktop.png %}
@@ -47,21 +47,21 @@ After completing the installation process, I rebooted the VM to arrive at my fre
 
 After booting the VM, the first thing I noticed was how low the resolution was - only 640x480. In an effort to fix this, I clicked `Start > Preferences > Monitor Settings`. This brought up the menu I was looking for, but the only other option was "Auto." This setting didn't change anything, so I started Googling around. It turns out that I needed to install a VirtualBox package called "Guest Additions" on the VM. Although the image needed to install Guest Additions comes bundled with VirtualBox, it's not the easiest thing to find and install. After some experimentation, I got it to work with the process described below. Please note that steps 1-4 may vary on non-Mac systems; however, it basically just involves copying a file to a convenient directory and then later selecting that file.
 
-{% youtube Y2TcQK49pbA %}
-<br>
+<p>{% youtube Y2TcQK49pbA %}</p>
+
 1. Copy `VBoxGuestAdditions.iso` image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: `sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/`
-1. Start the VM and log in.
-1. On the VirtualBox menu, go to `Devices > CD/DVD Devices > Choose a virtual CD/DVD disk file...`
-1. Navigate to the root directory and select the `VBoxGuestAdditions.iso` file you copied there in step 1.
-1. In the VM, close the autorun prompt that appears after a few moments and press `Ctrl + Alt + T` to open LXTerminal.
-1. Type `cd ../../media/USER`, where USER is your username (mine is "don"), to change into the VBoxGuestAdditions.iso directory.
-1. Type `ls` to show the contents of that directory. There should only be one directory, called something like `VBOXADDITIONS_4.3.20_96996` (it changes with each version). Type `cd` followed by a space and then the name of that directory to enter it. In practice, you can probably just type `cd V`, and then press tab to auto-complete the filename, and then press enter.
-1. Type `sudo apt-get update` to grab any updates to packages installed on your system.
-1. Type `sudo apt-get upgrade` to install those updates.
-1. Type `sudo apt-get install dkms` to install [dkms](http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support).
-1. Type `sudo sh VBoxLinuxAdditions.run` to install Guest Additions.
-1. Restart the VM.
+1. Start the VM and log in
+1. On the VirtualBox menu, go to `Devices > CD/DVD Devices > Choose a virtual CD/DVD disk file...
+1. Navigate to the root directory and select the `VBoxGuestAdditions.iso` file you copied there in step 1
+1. In the VM, close the autorun prompt that appears after a few moments and press `Ctrl + Alt + T` to open LXTerminal
+1. Type `cd ../../media/USER`, where USER is your username (mine is "don"), to change into the VBoxGuestAdditions.iso directory
+1. Type `ls` to show the contents of that directory. There should only be one directory, called something like `VBOXADDITIONS_4.3.20_96996` (it changes with each version). Type `cd` followed by a space and then the name of that directory to enter it. In practice, you can probably just type `cd V`, and then press tab to auto-complete the filename, and then press enter
+1. Type `sudo apt-get update` to grab any updates to packages installed on your system
+1. Type `sudo apt-get upgrade` to install those updates
+1. Type `sudo apt-get install dkms` to install [dkms](http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support)
+1. Type `sudo sh VBoxLinuxAdditions.run` to install Guest Additions
+1. Restart the VM
 
 After following these steps, I restarted the VM and was able to put it in full-screen mode by pressing `Right ⌘ + F` (the default is `Left ⌘ + F`, but I changed it to right). Since Lubuntu puts the menu bar at the bottom of the screen, I removed the auto-hiding menu bar that VirtualBox puts on the bottom of the screen by default. I did this by right-clicking the VM in the VirtualBox sidebar, selecting `Advanced` on the `General` menu, and deselecting `Show in Fullscreen/Seamless`.
 
-The steps outlined in this post left me with a basic virtual machine that I will be able to run on my company-issued T440. But the VM still doesn't feel like _home_. In my next few posts, I'll cover a few of the other customizations I made to complete my corporate development environment.
+The steps outlined in this post left me with a basic VM that I will be able to run on my company-issued T440. But the VM still doesn't feel like _home_. In my next few posts, I'll cover a few of the other customizations I made to complete my corporate development environment.
