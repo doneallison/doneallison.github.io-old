@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line/</loc>
+    <lastmod>2014-12-24T18:09:21-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/</loc>
     <lastmod>2014-12-23T22:21:47-05:00</lastmod>
     <priority>0.8</priority>
@@ -22,13 +27,13 @@
   </url>
   <url>
     <loc>http://doneallison.github.io/blog/archives/</loc>
-    <lastmod>2014-12-24T13:50:06-05:00</lastmod>
+    <lastmod>2014-12-24T18:18:51-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://doneallison.github.io/</loc>
-    <lastmod>2014-12-24T13:50:06-05:00</lastmod>
+    <lastmod>2014-12-24T18:18:51-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

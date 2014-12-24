@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Corporate Development Environment, Part II: Customizing the Command Line - Don Allison</title>
+  <meta name="author" content="Don Allison">
+
+  
+  <meta name="description" content="Introduction In my last post, I used VirtualBox to create a Lubuntu virtual machine (VM) on a Macbook Pro host. I undertook this project because I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Don Allison" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
+<!--- MathJax Configuration -->
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Don Allison</a></h1>
+  
+    <h2>Essays and Projects</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscribe" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewbox="0 0 100 100"><path class="social" d="M 13.310204,73.332654 C 5.967347,73.332654 0,79.322448 0,86.621428 c 0,7.338776 5.967347,13.262246 13.310204,13.262246 7.370408,0 13.328572,-5.92245 13.328572,-13.262246 0,-7.29898 -5.958164,-13.288774 -13.328572,-13.288774 z M 0.01530612,33.978572 V 53.143878 C 12.493878,53.143878 24.229592,58.02347 33.068368,66.865306 41.894898,75.685714 46.767346,87.47449 46.767346,100 h 19.25 C 66.017346,63.592858 36.4,33.979592 0.01530612,33.978572 l 0,0 z M 0.03877552,0 V 19.17449 C 44.54796,19.17551 80.77551,55.437756 80.77551,100 H 100 C 100,44.87653 55.15102,0 0.03877552,0 z"></path></svg></a></li>
+  
+</ul>
+  
+  
+  
+  
+  
+  
+  
+    
+      <form action="https://www.google.com/search" method="get">
+        <fieldset role="search">
+          <input type="hidden" name="q" value="site:doneallison.github.io" />
+    
+          <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+        </fieldset>
+      </form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Corporate Development Environment, Part II: Customizing the Command Line</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-24T18:09:21-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:09 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduction</h2>
+
+<p>In my <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">last post</a>, I used VirtualBox to create a Lubuntu virtual machine (VM) on a Macbook Pro host. I undertook this project because I wanted to create a POSIX-compliant development environment that will work on my company-issued Lenovo T440. Although I&rsquo;ve technically cleared that hurdle at this point, I wanted to customize the VM a bit more so it better resembles the development environment I know and love on my Macbook Pro. Since software developers spend a lot of time using the command line, the next logical step was to customize <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">Bash</a> and <a href="http://en.wikipedia.org/wiki/LXDE#Software_components">LXTerminal</a>.<!--more--></p>
+
+<h2>Customizing the Bash Prompt</h2>
+
+<p>Bourne Again Shell (Bash) is a popular command-line interpreter for Unix-like operating systems. It allows users to control computers by typing text commands into a <a href="http://en.wikipedia.org/wiki/Terminal_emulator">terminal emulator</a>. Before the development of <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">graphical user interfaces</a> (GUIs), this was the dominant means of interacting with a computer, and it&rsquo;s still quite common. Learning to use the command line is harder than learning to use a GUI, but the command line is generally faster and more powerful when used correctly. In many cases, for example, a sequence of several clicks on various menus can be reduced to a single command.</p>
+
+<p>By default, the Bash <em>prompt</em> (the sequence of symbols that indicates where the user should type commands) on LXTerminal looks as follows in my VM: <code>don@don-devenv:~$</code>. This prompt may look complicated, but it&rsquo;s actually quite simple. The <code>don@don-devenv</code> simply denotes that user <code>don</code> is logged in on the computer named <code>don-devenv</code>. The <code>:~</code> indicates that the user is in the root directory (<code>home/don</code>) of don-devenv (<code>~</code> is an alias for <code>home/don</code>). The <code>$</code> indicates the end of the prompt, where the user should type commands.</p>
+
+<p>I modified this prompt to provide a bit more functionality. First, I added a timestamp to the prompt, which will allow me to tell when I issued certain commands. Second, I added some code that displays the active <a href="http://en.wikipedia.org/wiki/Git_%28software%29">Git</a> branch when I change directories into a Git repository. This relieves me of having to type <code>git branch</code> to retrieve that information. Finally, I changed the <code>$</code> to a red <code>♥</code>, although I could have chosen a different Unicode character.</p>
+
+<p>Thanks to the good folks at <a href="http://flatironschool.com/">The Flatiron School</a> (of which I am now a proud alum), implementing these changes was pretty simple. First, I forked their <a href="https://github.com/flatiron-school/dotfiles">dotfiles</a> repository and made a few small changes to the <code>.bash_profile</code> file (my changes are available <a href="https://github.com/doneallison/dotfiles/blob/master/bash_profile">here</a>). Then, I copied the entire, modified <code>.bash_profile</code> file into the root directory on the VM. Finally, I added a short statement to the bottom of the <code>.bashrc</code> file on the VM to ensure that Bash loads the custom shell whenever I open LXTerminal. Step-by-step instructions are below.</p>
+
+<p>
+<div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('gGDdl5eDR28');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/gGDdl5eDR28?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
+<a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/gGDdl5eDR28/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=gGDdl5eDR28" id="gGDdl5eDR28" onclick="return false;">
+<div class="youtube-lazy-link-div"></div>
+<div class="youtube-lazy-link-info">Creating a Custom Bash Profile in LXTerminal</div>
+</a>
+<div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
+</div>
+
+</p>
+
+
+<ol>
+<li>In the VM, open LXTerminal and navigate to the root directory (type <code>cd ~</code>)</li>
+<li>Type <code>touch .bash_profile</code> to create a file for the settings, and then <code>leafpad .bash_profile</code> to open it in a text editor</li>
+<li>Copy the <a href="https://github.com/doneallison/dotfiles/blob/master/bash_profile">bash profile</a> on my GitHub and paste it into Leafpad</li>
+<li>Save and close</li>
+<li>Type <code>source .bash_profile</code> to reload the bash profile</li>
+<li>Type <code>leafpad .bashrc</code> to open the <code>.bashrc</code> file</li>
+<li>Type the following text at the bottom of the file: <code>. ~/.bash_profile</code></li>
+<li>Save and close</li>
+<li>Exit the terminal and then restart it. The changes should be apparent</li>
+</ol>
+
+
+<h2>Customizing the Look and Feel of LXTerminal</h2>
+
+<p>In addition to adding custom styling to my command prompt, I also like to customize the fonts and colors. In LXTerminal, I was able to do this by editing the <code>lxterminal.conf</code> file. First, I typed <code>leafpad ~/.config/lxterminal/lxterminal.conf</code> in the command prompt to open the file. Then, I added the following settings:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[general]
+</span><span class='line'>fontname=DejaVu Sans Mono 14
+</span><span class='line'>selchars=-A-Za-z0-9,./?%&#:_
+</span><span class='line'>scrollback=1000
+</span><span class='line'>bgcolor=#00002b2b3636
+</span><span class='line'>bgalpha=65535
+</span><span class='line'>fgcolor=#65657b7b8383
+</span><span class='line'>disallowbold=false
+</span><span class='line'>cursorblinks=false
+</span><span class='line'>cursorunderline=false
+</span><span class='line'>audiblebell=false
+</span><span class='line'>tabpos=top
+</span><span class='line'>hidescrollbar=false
+</span><span class='line'>hidemenubar=false
+</span><span class='line'>hideclosebutton=false
+</span><span class='line'>disablef10=false
+</span><span class='line'>disablealt=false</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These settings result in a larger font and a <a href="http://en.wikipedia.org/wiki/Solarisation">&ldquo;solarized&rdquo;</a> color scheme (specific colors courtesy of GitHub user <a href="https://gist.github.com/perusio/1154002">perusio</a>).</p>
+
+<p><img class="center" src="/images/customizing-lxterminal/customized_terminal.png"></p>
+
+<h2>Coming Up&hellip;</h2>
+
+<p>When they&rsquo;re not in the command line, software developers can often be found in the text editor. Accordingly, in my next post, I&rsquo;ll turn my attention to installing and customizing <a href="http://www.sublimetext.com/">Sublime Text</a>, my text editor of choice.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+
+  <span class="byline author vcard">Authored by <span class="fn">
+  
+    Don Allison
+  
+  </span></span>
+
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-12-24T18:09:21-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:09 pm</span></time>
+      
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line/" data-via="" data-counturl="http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/" title="Previous Post: Creating a Development Environment on My Company-Issued Laptop">&laquo; Creating a Development Environment on My Company-Issued Laptop</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Don Allison -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

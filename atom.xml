@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-24T13:50:06-05:00</updated>
+  <updated>2014-12-24T18:18:51-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Corporate Development Environment, Part II: Customizing the Command Line]]></title>
+    <link href="http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line/"/>
+    <updated>2014-12-24T18:09:21-05:00</updated>
+    <id>http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>In my <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">last post</a>, I used VirtualBox to create a Lubuntu virtual machine (VM) on a Macbook Pro host. I undertook this project because I wanted to create a POSIX-compliant development environment that will work on my company-issued Lenovo T440. Although I&rsquo;ve technically cleared that hurdle at this point, I wanted to customize the VM a bit more so it better resembles the development environment I know and love on my Macbook Pro. Since software developers spend a lot of time using the command line, the next logical step was to customize <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">Bash</a> and <a href="http://en.wikipedia.org/wiki/LXDE#Software_components">LXTerminal</a>.<!--more--></p>
+
+<h2>Customizing the Bash Prompt</h2>
+
+<p>Bourne Again Shell (Bash) is a popular command-line interpreter for Unix-like operating systems. It allows users to control computers by typing text commands into a <a href="http://en.wikipedia.org/wiki/Terminal_emulator">terminal emulator</a>. Before the development of <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">graphical user interfaces</a> (GUIs), this was the dominant means of interacting with a computer, and it&rsquo;s still quite common. Learning to use the command line is harder than learning to use a GUI, but the command line is generally faster and more powerful when used correctly. In many cases, for example, a sequence of several clicks on various menus can be reduced to a single command.</p>
+
+<p>By default, the Bash <em>prompt</em> (the sequence of symbols that indicates where the user should type commands) on LXTerminal looks as follows in my VM: <code>don@don-devenv:~$</code>. This prompt may look complicated, but it&rsquo;s actually quite simple. The <code>don@don-devenv</code> simply denotes that user <code>don</code> is logged in on the computer named <code>don-devenv</code>. The <code>:~</code> indicates that the user is in the root directory (<code>home/don</code>) of don-devenv (<code>~</code> is an alias for <code>home/don</code>). The <code>$</code> indicates the end of the prompt, where the user should type commands.</p>
+
+<p>I modified this prompt to provide a bit more functionality. First, I added a timestamp to the prompt, which will allow me to tell when I issued certain commands. Second, I added some code that displays the active <a href="http://en.wikipedia.org/wiki/Git_%28software%29">Git</a> branch when I change directories into a Git repository. This relieves me of having to type <code>git branch</code> to retrieve that information. Finally, I changed the <code>$</code> to a red <code>♥</code>, although I could have chosen a different Unicode character.</p>
+
+<p>Thanks to the good folks at <a href="http://flatironschool.com/">The Flatiron School</a> (of which I am now a proud alum), implementing these changes was pretty simple. First, I forked their <a href="https://github.com/flatiron-school/dotfiles">dotfiles</a> repository and made a few small changes to the <code>.bash_profile</code> file (my changes are available <a href="https://github.com/doneallison/dotfiles/blob/master/bash_profile">here</a>). Then, I copied the entire, modified <code>.bash_profile</code> file into the root directory on the VM. Finally, I added a short statement to the bottom of the <code>.bashrc</code> file on the VM to ensure that Bash loads the custom shell whenever I open LXTerminal. Step-by-step instructions are below.</p>
+
+<p>
+<div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('gGDdl5eDR28');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/gGDdl5eDR28?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
+<a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/gGDdl5eDR28/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=gGDdl5eDR28" id="gGDdl5eDR28" onclick="return false;">
+<div class="youtube-lazy-link-div"></div>
+<div class="youtube-lazy-link-info">Creating a Custom Bash Profile in LXTerminal</div>
+</a>
+<div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
+</div>
+
+</p>
+
+
+<ol>
+<li>In the VM, open LXTerminal and navigate to the root directory (type <code>cd ~</code>)</li>
+<li>Type <code>touch .bash_profile</code> to create a file for the settings, and then <code>leafpad .bash_profile</code> to open it in a text editor</li>
+<li>Copy the <a href="https://github.com/doneallison/dotfiles/blob/master/bash_profile">bash profile</a> on my GitHub and paste it into Leafpad</li>
+<li>Save and close</li>
+<li>Type <code>source .bash_profile</code> to reload the bash profile</li>
+<li>Type <code>leafpad .bashrc</code> to open the <code>.bashrc</code> file</li>
+<li>Type the following text at the bottom of the file: <code>. ~/.bash_profile</code></li>
+<li>Save and close</li>
+<li>Exit the terminal and then restart it. The changes should be apparent</li>
+</ol>
+
+
+<h2>Customizing the Look and Feel of LXTerminal</h2>
+
+<p>In addition to adding custom styling to my command prompt, I also like to customize the fonts and colors. In LXTerminal, I was able to do this by editing the <code>lxterminal.conf</code> file. First, I typed <code>leafpad ~/.config/lxterminal/lxterminal.conf</code> in the command prompt to open the file. Then, I added the following settings:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[general]
+</span><span class='line'>fontname=DejaVu Sans Mono 14
+</span><span class='line'>selchars=-A-Za-z0-9,./?%&#:_
+</span><span class='line'>scrollback=1000
+</span><span class='line'>bgcolor=#00002b2b3636
+</span><span class='line'>bgalpha=65535
+</span><span class='line'>fgcolor=#65657b7b8383
+</span><span class='line'>disallowbold=false
+</span><span class='line'>cursorblinks=false
+</span><span class='line'>cursorunderline=false
+</span><span class='line'>audiblebell=false
+</span><span class='line'>tabpos=top
+</span><span class='line'>hidescrollbar=false
+</span><span class='line'>hidemenubar=false
+</span><span class='line'>hideclosebutton=false
+</span><span class='line'>disablef10=false
+</span><span class='line'>disablealt=false</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These settings result in a larger font and a <a href="http://en.wikipedia.org/wiki/Solarisation">&ldquo;solarized&rdquo;</a> color scheme (specific colors courtesy of GitHub user <a href="https://gist.github.com/perusio/1154002">perusio</a>).</p>
+
+<p><img class="center" src="http://doneallison.github.io/images/customizing-lxterminal/customized_terminal.png"></p>
+
+<h2>Coming Up&hellip;</h2>
+
+<p>When they&rsquo;re not in the command line, software developers can often be found in the text editor. Accordingly, in my next post, I&rsquo;ll turn my attention to installing and customizing <a href="http://www.sublimetext.com/">Sublime Text</a>, my text editor of choice.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a Development Environment on My Company-Issued Laptop]]></title>
