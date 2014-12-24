@@ -88,7 +88,7 @@ Then, you can launch jsc by typing `jsc` in Terminal. jsc is good for investigat
 #####Chrome DevTools
 Fortunately, many Mac users already have another JavaScript tool installed that handles multi-line pasting with ease: [Chrome DevTools](https://developer.chrome.com/devtools), "a set of web authoring and debugging tools built into Google Chrome." DevTools can be launched by pressing `command + option + j` from within Google Chrome.
 
-{% img center /images/debugging-javascript_chromedevtools.png %}
+{% img center /images/debugging-javascript/chromedevtools.png %}
 
 Chrome DevTools are amazing, and I'm confident I'll find myself using them more as I gain experience. As a novice, however, they feel mildly like overkill in situations when I simply want to test a single function or chunk of code. In addition, using DevTools for small tests requires me to copy code from my text editor and paste it into DevTools (or else edit my code directly in DevTools, missing out on JSHint, syntax highlighting, and other Sublime Text goodness). This takes time and can introduce additional errors (e.g., forgetting to copy a variable declaration that is relied upon in the code I do copy). For these reasons, I decided to look for something simpler.
 
@@ -109,7 +109,7 @@ I ended up finding the answer on [wikihow.com](http://www.wikihow.com/Create-a-J
 
 Then, when you have a JavaScript file open in Sublime Text and want to run it, you can just press `command + b`. (If this doesn't work, make sure the sublime-build you just created is selected by going to `Tools > Build System` and selecting `node`). Sublime Text will build the code using Node.js and then display the result in a small window at the bottom of the editor.
 
-{% img center /images/debugging-javascript_js_console_in_sublime_text.png %}
+{% img center /images/debugging-javascript/js_console_in_sublime_text.png %}
 
 ####Replacing pry
 As far as I've been able to tell, replacing pry is a bit more difficult than replacing irb. The best tool I've come across is in - surprise! - DevTools, specifically under the `Sources` tab. If you open DevTools on a page with the script you want to inspect, you can use the `Sources` tab to step through and debug the code. As in pry, this allows you to pause execution at specified breakpoints in a program and investigate the environment, including, e.g., the current values of all variables in scope. The main drawback of this function of DevTools is that it's somewhat annoying to get a one-off script (i.e., a script not yet integrated into a minimally functioning webpage) loaded into the tool. As far as I can tell, you can't just open a local file and use the tool on it.
@@ -131,15 +131,15 @@ myFunc();
 ```
 Then, you can open the file in Chrome, press `command + option + j` to open DevTools, click on the `Sources` tab, and press `command + r` to refresh and inspect your code.
 
-{% img center /images/debugging-javascript_devtools_sources.png %}
+{% img center /images/debugging-javascript/devtools_sources.png %}
 
 In this example, we can see that the `debugger` statement acts as a breakpoint - code execution is paused, and we can examine the current state of each variable under the "Scope Variables" window. Right now, `test1` has a value of "Hello world!", but `test2` is still `undefined` because the `debugger` statement paused code execution. If we click twice the button to step into the next function call...
 
-{% img center /images/debugging-javascript_devtools_sources_button.png %}
+{% img center /images/debugging-javascript/devtools_sources_button.png %}
 
 ...we'll see that `test2` is now assigned the value of `"Goodbye world!"`.
 
-{% img center /images/debugging-javascript_devtools_sources_2.png %}
+{% img center /images/debugging-javascript/devtools_sources_2.png %}
 
 If you don't like inserting `debugger` statements into your code, you can also create a breakpoint by clicking the left margin of the center pane in the DevTools debugger, which will create a blue arrow indicating a breakpoint at the line selected.
 
