@@ -132,6 +132,7 @@
 
 <p>Having installed VirtualBox and downloaded the ~740MB Lubuntu .iso, I was ready to get started. The first step was to create the VM in VirtualBox. During this process, I accepted most of the defaults apart from selecting the correct OS (32-bit Ubuntu Linux), entering a unique name (&ldquo;devenv&rdquo;), and changing the default memory allocation from 512MB to 1024MB.</p>
 
+<p>
 <div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('xh35wRElX6U');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/xh35wRElX6U?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
 <a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/xh35wRElX6U/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=xh35wRElX6U" id="xh35wRElX6U" onclick="return false;">
 <div class="youtube-lazy-link-div"></div>
@@ -140,10 +141,12 @@
 <div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
 </div>
 
+</p>
 
-<p><br>
-The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Since I hadn&rsquo;t installed an operating system yet, VirtualBox prompted me to select the media or image to boot from. I selected the Lubuntu .iso, and VirtualBox began running it in a separate window. From that point on, I followed a standard installation process in the VM. (Please note: The video below has been edited for length. The actual installation process took about 11 minutes on my computer.)</p>
 
+<p>The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Since I hadn&rsquo;t installed an operating system yet, VirtualBox prompted me to select the media or image to boot from. I selected the Lubuntu .iso, and VirtualBox began running it in a separate window. From that point on, I followed a standard installation process in the VM. (Please note: The video below has been edited for length. The actual installation process took about 11 minutes on my computer.)</p>
+
+<p>
 <div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('724Ey73Q2n8');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/724Ey73Q2n8?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
 <a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/724Ey73Q2n8/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=724Ey73Q2n8" id="724Ey73Q2n8" onclick="return false;">
 <div class="youtube-lazy-link-div"></div>
@@ -154,9 +157,10 @@ The next step was to boot the VM by clicking on it in the VirtualBox sidebar. Si
 Please note: This video has been edited to reduce its overall length. The actual installation process took about 11 minutes.</div>
 </div>
 
+</p>
 
-<p><br>
-After completing the installation process, I rebooted the VM to arrive at my fresh Lubuntu desktop.</p>
+
+<p>After completing the installation process, I rebooted the VM to arrive at my fresh Lubuntu desktop.</p>
 
 <p><img class="center" src="/images/corporate-environment/lubuntu_desktop.png"></p>
 
@@ -164,6 +168,7 @@ After completing the installation process, I rebooted the VM to arrive at my fre
 
 <p>After booting the VM, the first thing I noticed was how low the resolution was - only 640x480. In an effort to fix this, I clicked <code>Start &gt; Preferences &gt; Monitor Settings</code>. This brought up the menu I was looking for, but the only other option was &ldquo;Auto.&rdquo; This setting didn&rsquo;t change anything, so I started Googling around. It turns out that I needed to install a VirtualBox package called &ldquo;Guest Additions&rdquo; on the VM. Although the image needed to install Guest Additions comes bundled with VirtualBox, it&rsquo;s not the easiest thing to find and install. After some experimentation, I got it to work with the process described below. Please note that steps 1-4 may vary on non-Mac systems; however, it basically just involves copying a file to a convenient directory and then later selecting that file.</p>
 
+<p>
 <div class="ratio-4-3 embed-video-container" onclick="var myAnchor = document.getElementById('Y2TcQK49pbA');var tmpDiv = document.createElement('div');tmpDiv.innerHTML = '&lt;iframe style=&quot;vertical-align:top;width:100%;height:100%;position:absolute;&quot; src=&quot;http://www.youtube.com/embed/Y2TcQK49pbA?autoplay=1&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;';myAnchor.parentNode.replaceChild(tmpDiv.firstChild, myAnchor);return false;" title="click here to play">
 <a class="youtube-lazy-link" style="width:100%;height:100%;background:#000 url(http://i2.ytimg.com/vi/Y2TcQK49pbA/0.jpg) center center no-repeat;background-size:contain;position:absolute" href="http://www.youtube.com/watch?v=Y2TcQK49pbA" id="Y2TcQK49pbA" onclick="return false;">
 <div class="youtube-lazy-link-div"></div>
@@ -172,24 +177,28 @@ After completing the installation process, I rebooted the VM to arrive at my fre
 <div class="video-info" >This video was created to complement a blog post at http://doneallison.com.</div>
 </div>
 
+</p>
 
-<p><br>
-1. Copy <code>VBoxGuestAdditions.iso</code> image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: <code>sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/</code>
-1. Start the VM and log in.
-1. On the VirtualBox menu, go to <code>Devices &gt; CD/DVD Devices &gt; Choose a virtual CD/DVD disk file...</code>
-1. Navigate to the root directory and select the <code>VBoxGuestAdditions.iso</code> file you copied there in step 1.
-1. In the VM, close the autorun prompt that appears after a few moments and press <code>Ctrl + Alt + T</code> to open LXTerminal.
-1. Type <code>cd ../../media/USER</code>, where USER is your username (mine is &ldquo;don&rdquo;), to change into the VBoxGuestAdditions.iso directory.
-1. Type <code>ls</code> to show the contents of that directory. There should only be one directory, called something like <code>VBOXADDITIONS_4.3.20_96996</code> (it changes with each version). Type <code>cd</code> followed by a space and then the name of that directory to enter it. In practice, you can probably just type <code>cd V</code>, and then press tab to auto-complete the filename, and then press enter.
-1. Type <code>sudo apt-get update</code> to grab any updates to packages installed on your system.
-1. Type <code>sudo apt-get upgrade</code> to install those updates.
-1. Type <code>sudo apt-get install dkms</code> to install <a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">dkms</a>.
-1. Type <code>sudo sh VBoxLinuxAdditions.run</code> to install Guest Additions.
-1. Restart the VM.</p>
+
+<ol>
+<li>Copy <code>VBoxGuestAdditions.iso</code> image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: <code>sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/</code></li>
+<li>Start the VM and log in</li>
+<li>On the VirtualBox menu, go to `Devices > CD/DVD Devices > Choose a virtual CD/DVD disk file&hellip;</li>
+<li>Navigate to the root directory and select the <code>VBoxGuestAdditions.iso</code> file you copied there in step 1</li>
+<li>In the VM, close the autorun prompt that appears after a few moments and press <code>Ctrl + Alt + T</code> to open LXTerminal</li>
+<li>Type <code>cd ../../media/USER</code>, where USER is your username (mine is &ldquo;don&rdquo;), to change into the VBoxGuestAdditions.iso directory</li>
+<li>Type <code>ls</code> to show the contents of that directory. There should only be one directory, called something like <code>VBOXADDITIONS_4.3.20_96996</code> (it changes with each version). Type <code>cd</code> followed by a space and then the name of that directory to enter it. In practice, you can probably just type <code>cd V</code>, and then press tab to auto-complete the filename, and then press enter</li>
+<li>Type <code>sudo apt-get update</code> to grab any updates to packages installed on your system</li>
+<li>Type <code>sudo apt-get upgrade</code> to install those updates</li>
+<li>Type <code>sudo apt-get install dkms</code> to install <a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">dkms</a></li>
+<li>Type <code>sudo sh VBoxLinuxAdditions.run</code> to install Guest Additions</li>
+<li>Restart the VM</li>
+</ol>
+
 
 <p>After following these steps, I restarted the VM and was able to put it in full-screen mode by pressing <code>Right ⌘ + F</code> (the default is <code>Left ⌘ + F</code>, but I changed it to right). Since Lubuntu puts the menu bar at the bottom of the screen, I removed the auto-hiding menu bar that VirtualBox puts on the bottom of the screen by default. I did this by right-clicking the VM in the VirtualBox sidebar, selecting <code>Advanced</code> on the <code>General</code> menu, and deselecting <code>Show in Fullscreen/Seamless</code>.</p>
 
-<p>The steps outlined in this post left me with a basic virtual machine that I will be able to run on my company-issued T440. But the VM still doesn&rsquo;t feel like <em>home</em>. In my next few posts, I&rsquo;ll cover a few of the other customizations I made to complete my corporate development environment.</p>
+<p>The steps outlined in this post left me with a basic VM that I will be able to run on my company-issued T440. But the VM still doesn&rsquo;t feel like <em>home</em>. In my next few posts, I&rsquo;ll cover a few of the other customizations I made to complete my corporate development environment.</p>
 </div>
   
   
