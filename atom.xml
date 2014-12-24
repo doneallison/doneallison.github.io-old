@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-24T00:35:12-05:00</updated>
+  <updated>2014-12-24T00:49:22-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -20,7 +20,7 @@
     <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop</id>
     <content type="html"><![CDATA[<h2>Background and Motivation</h2>
 
-<p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.</p>
+<p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.<!--more--></p>
 
 <p>Don&rsquo;t get me wrong; it could be worse. Apart from its horrendous touchpad, the T440 isn&rsquo;t a bad computer. It even has a pretty good display, especially if you haven&rsquo;t yet been spoiled by a Retina Display. For a software developer, however, the T440 has a major flaw: it runs Windows 7. This is a problem not because Windows 7 is bad, but because Windows 7, like all other versions of Windows, is incompatible with <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a>.</p>
 
@@ -129,7 +129,7 @@ Please note: This video has been edited to reduce its overall length. The actual
     <id>http://doneallison.github.io/blog/2014/11/17/debugging-javascript</id>
     <content type="html"><![CDATA[<h2>The Problem</h2>
 
-<p>Ever since my class at <a href="http://flatironschool.com/">The Flatiron School</a> took a detour into JavaScript from Ruby and Rails, I&rsquo;ve found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don&rsquo;t always know where to put my semicolons, curly braces, <code>var</code> keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby. Take, for example, the following Ruby code:</p>
+<p>Ever since my class at <a href="http://flatironschool.com/">The Flatiron School</a> took a detour into JavaScript from Ruby and Rails, I&rsquo;ve found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don&rsquo;t always know where to put my semicolons, curly braces, <code>var</code> keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby.<!--more--> Take, for example, the following Ruby code:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -347,7 +347,7 @@ Please note: This video has been edited to reduce its overall length. The actual
 <li><p><strong>Preparing Data</strong>: It takes a long time to convert source documents into a format that MALLET can understand and analyze, and the transformations are amenable to automation.</p></li>
 <li><p><strong>Environment Setup</strong>: Setting up MALLET to work properly can be a fussy process, especially for Windows users.</p></li>
 <li><p><strong>Clunky CLI</strong>: Although MALLET does have an independently developed <a href="https://code.google.com/p/topic-modeling-tool/">GUI</a>, most people interact with MALLET through its somewhat clunky CLI. For certain advanced features, the CLI is the only way to interact with MALLET.</p></li>
-<li><p><strong>Files, files, and more files</strong>: The only output MALLET provides are large text files that are difficult to evaluate quickly and intuitively. As a result, many users end up importing MALLET output files into Excel <em>every time</em> they train a topic model in order to evaluate the suitability of the model. This long feedback cycle aligns poorly with the iterative, intuitive process required to identify a good topic model.</p></li>
+<li><p><strong>Files, files, and more files</strong>: The only output MALLET provides are large text files that are difficult to evaluate quickly and intuitively. As a result, many users end up importing MALLET output files into Excel <em>every time</em> they train a topic model in order to evaluate the suitability of the model. This long feedback cycle aligns poorly with the iterative, intuitive process required to identify a good topic model.<!--more--></p></li>
 </ul>
 
 
@@ -388,7 +388,7 @@ Please note: This video has been edited to reduce its overall length. The actual
     <link href="http://doneallison.github.io/blog/2014/10/20/topic-modeling-my-text-messages/"/>
     <updated>2014-10-20T07:48:26-04:00</updated>
     <id>http://doneallison.github.io/blog/2014/10/20/topic-modeling-my-text-messages</id>
-    <content type="html"><![CDATA[<p>Today marks exactly one year since my lovely girlfriend and I began dating. In honor of that occasion (and inspired by posts from <a href="http://blog.kanaabe.com/blog/2014/10/16/the-nokogiri-saw/">Kana Abe</a> and <a href="http://adashofdata.com/2014/10/14/how-text-messages-change-from-dating-to-marriage/">Alice Zhao</a>), I decided to try building a <a href="http://en.wikipedia.org/wiki/Topic_model">topic model</a> of all the text messages we&rsquo;ve sent to each other using <a href="https://www.google.com/settings/takeout">Google Takeout</a>, Ruby, <a href="http://www.nokogiri.org/">Nokogiri</a> (an HTML parser), and <a href="http://mallet.cs.umass.edu/">MALLET</a> (a Java-based command line program for natural language processing). The idea was that I might be able to extract some insight about what we&rsquo;ve been talking about during our relationship and how it has changed over time, much like Professor Robert K. Nelson did for the Civil War in his project <a href="http://dsl.richmond.edu/dispatch/">Mining the Dispatch</a>.</p>
+    <content type="html"><![CDATA[<p>Today marks exactly one year since my lovely girlfriend and I began dating. In honor of that occasion (and inspired by posts from <a href="http://blog.kanaabe.com/blog/2014/10/16/the-nokogiri-saw/">Kana Abe</a> and <a href="http://adashofdata.com/2014/10/14/how-text-messages-change-from-dating-to-marriage/">Alice Zhao</a>), I decided to try building a <a href="http://en.wikipedia.org/wiki/Topic_model">topic model</a> of all the text messages we&rsquo;ve sent to each other using <a href="https://www.google.com/settings/takeout">Google Takeout</a>, Ruby, <a href="http://www.nokogiri.org/">Nokogiri</a> (an HTML parser), and <a href="http://mallet.cs.umass.edu/">MALLET</a> (a Java-based command line program for natural language processing). The idea was that I might be able to extract some insight about what we&rsquo;ve been talking about during our relationship and how it has changed over time, much like Professor Robert K. Nelson did for the Civil War in his project <a href="http://dsl.richmond.edu/dispatch/">Mining the Dispatch</a>.<!--more--></p>
 
 <h3>Step One: Download Texts from Google Takeout</h3>
 
