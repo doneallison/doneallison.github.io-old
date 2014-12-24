@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-24T12:47:27-05:00</updated>
+  <updated>2014-12-24T12:52:11-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Creating a Development Environment on My Corporate Laptop]]></title>
-    <link href="http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop/"/>
+    <title type="html"><![CDATA[Creating a Development Environment on My Company-Issued Laptop]]></title>
+    <link href="http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/"/>
     <updated>2014-12-23T22:21:47-05:00</updated>
-    <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop</id>
+    <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop</id>
     <content type="html"><![CDATA[<h2>Background and Motivation</h2>
 
 <p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.<!--more--></p>
