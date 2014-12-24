@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 ##The Problem
-Ever since my class at [The Flatiron School](http://flatironschool.com/) took a detour into JavaScript from Ruby and Rails, I've found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don't always know where to put my semicolons, curly braces, `var` keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby. Take, for example, the following Ruby code:
+Ever since my class at [The Flatiron School](http://flatironschool.com/) took a detour into JavaScript from Ruby and Rails, I've found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don't always know where to put my semicolons, curly braces, `var` keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby.<!--more--> Take, for example, the following Ruby code:
 
 ```ruby
 def my_method(arg1, arg2)

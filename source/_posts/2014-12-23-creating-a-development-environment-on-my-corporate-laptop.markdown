@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 ##Background and Motivation
-Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we're all eager to begin earning money again. For a variety of reasons, I've decided to return to the position I held before coming to The Flatiron School. Although I'm really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.
+Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we're all eager to begin earning money again. For a variety of reasons, I've decided to return to the position I held before coming to The Flatiron School. Although I'm really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.<!--more-->
 
 Don't get me wrong; it could be worse. Apart from its horrendous touchpad, the T440 isn't a bad computer. It even has a pretty good display, especially if you haven't yet been spoiled by a Retina Display. For a software developer, however, the T440 has a major flaw: it runs Windows 7. This is a problem not because Windows 7 is bad, but because Windows 7, like all other versions of Windows, is incompatible with [POSIX](http://en.wikipedia.org/wiki/POSIX).
 

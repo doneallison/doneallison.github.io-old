@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 ##Introduction
-After writing my [last post](http://doneallison.com/blog/2014/10/20/topic-modeling-my-text-messages/), I wanted to explore topic modeling and the [MAchine Learning for LanguagE Toolkit (MALLET)](http://mallet.cs.umass.edu/) a bit further. Specifically, I wanted to explore the possibility of liberating MALLET from several usability issues:
+After writing my [last post](http://doneallison.com/blog/2014/10/20/topic-modeling-my-text-messages/), I wanted to explore topic modeling and the [MAchine Learning for LanguagE Toolkit (MALLET)](http://mallet.cs.umass.edu/) a bit further. Specifically, I wanted to explore the possibility of liberating MALLET from several usability issues.<!--more--> Here are a few of the issues I had in mind:
 
 + **Preparing Data**: It takes a long time to convert source documents into a format that MALLET can understand and analyze, and the transformations are amenable to automation.
 
