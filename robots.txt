@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: http://doneallison.github.io/sitemap.xml
