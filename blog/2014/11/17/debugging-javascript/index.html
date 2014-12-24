@@ -230,7 +230,7 @@
 
 <p>Fortunately, many Mac users already have another JavaScript tool installed that handles multi-line pasting with ease: <a href="https://developer.chrome.com/devtools">Chrome DevTools</a>, &ldquo;a set of web authoring and debugging tools built into Google Chrome.&rdquo; DevTools can be launched by pressing <code>command + option + j</code> from within Google Chrome.</p>
 
-<p><img class="center" src="/images/debugging-javascript_chromedevtools.png"></p>
+<p><img class="center" src="/images/debugging-javascript/chromedevtools.png"></p>
 
 <p>Chrome DevTools are amazing, and I&rsquo;m confident I&rsquo;ll find myself using them more as I gain experience. As a novice, however, they feel mildly like overkill in situations when I simply want to test a single function or chunk of code. In addition, using DevTools for small tests requires me to copy code from my text editor and paste it into DevTools (or else edit my code directly in DevTools, missing out on JSHint, syntax highlighting, and other Sublime Text goodness). This takes time and can introduce additional errors (e.g., forgetting to copy a variable declaration that is relied upon in the code I do copy). For these reasons, I decided to look for something simpler.</p>
 
@@ -253,7 +253,7 @@
 
 <p>Then, when you have a JavaScript file open in Sublime Text and want to run it, you can just press <code>command + b</code>. (If this doesn&rsquo;t work, make sure the sublime-build you just created is selected by going to <code>Tools &gt; Build System</code> and selecting <code>node</code>). Sublime Text will build the code using Node.js and then display the result in a small window at the bottom of the editor.</p>
 
-<p><img class="center" src="/images/debugging-javascript_js_console_in_sublime_text.png"></p>
+<p><img class="center" src="/images/debugging-javascript/js_console_in_sublime_text.png"></p>
 
 <h4>Replacing pry</h4>
 
@@ -288,15 +288,15 @@
 
 <p>Then, you can open the file in Chrome, press <code>command + option + j</code> to open DevTools, click on the <code>Sources</code> tab, and press <code>command + r</code> to refresh and inspect your code.</p>
 
-<p><img class="center" src="/images/debugging-javascript_devtools_sources.png"></p>
+<p><img class="center" src="/images/debugging-javascript/devtools_sources.png"></p>
 
 <p>In this example, we can see that the <code>debugger</code> statement acts as a breakpoint - code execution is paused, and we can examine the current state of each variable under the &ldquo;Scope Variables&rdquo; window. Right now, <code>test1</code> has a value of &ldquo;Hello world!&rdquo;, but <code>test2</code> is still <code>undefined</code> because the <code>debugger</code> statement paused code execution. If we click twice the button to step into the next function call&hellip;</p>
 
-<p><img class="center" src="/images/debugging-javascript_devtools_sources_button.png"></p>
+<p><img class="center" src="/images/debugging-javascript/devtools_sources_button.png"></p>
 
 <p>&hellip;we&rsquo;ll see that <code>test2</code> is now assigned the value of <code>"Goodbye world!"</code>.</p>
 
-<p><img class="center" src="/images/debugging-javascript_devtools_sources_2.png"></p>
+<p><img class="center" src="/images/debugging-javascript/devtools_sources_2.png"></p>
 
 <p>If you don&rsquo;t like inserting <code>debugger</code> statements into your code, you can also create a breakpoint by clicking the left margin of the center pane in the DevTools debugger, which will create a blue arrow indicating a breakpoint at the line selected.</p>
 
@@ -343,6 +343,8 @@
       
         <a class="basic-alignment left" href="/blog/2014/11/03/my-first-web-app-topicana/" title="Previous Post: My First Web App: Topicana">&laquo; My First Web App: Topicana</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2014/12/23/creating-a-development-environment-on-my-corporate-laptop/" title="Next Post: Creating a Development Environment on My Corporate Laptop">Creating a Development Environment on My Corporate Laptop &raquo;</a>
       
     </p>
   </footer>
