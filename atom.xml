@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-24T12:52:11-05:00</updated>
+  <updated>2014-12-24T13:50:06-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -34,7 +34,7 @@
 
 <h3>Cygwin</h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> is a Windows program that provides a Unix-like command line and some degree of POSIX compliance. Although I don&rsquo;t fully understand Cygwin and could certainly be selling it short, it seems most valuable in providing a Unix-like alternative to Windows&#8217; stock Command Prompt. If you want to do something more complex, like use RVM to manage multiple versions of Ruby, my sense is that you begin to reach Cygwin&rsquo;s limits. In addition, Cygwin would likely involve somewhat of a learning curve. For these reasons, I decided to leave Cygwin as an alterantive to explore if my preferred option, virtualization, didn&rsquo;t work.</p>
+<p><a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> is a Windows program that provides a Unix-like command line and some degree of POSIX compliance. Although I don&rsquo;t fully understand Cygwin and could certainly be selling it short, it seems most valuable in providing a Unix-like alternative to Windows&#8217; stock Command Prompt. If you want to do something more complex, like use RVM to manage multiple versions of Ruby, my sense is that you begin to reach Cygwin&rsquo;s limits. In addition, Cygwin would likely involve somewhat of a learning curve. For these reasons, I decided to leave Cygwin as an alterantive to explore if virtualization, my preferred option, didn&rsquo;t work.</p>
 
 <h3>Virtualization</h3>
 
@@ -46,7 +46,7 @@
 
 <h2>Choosing and Obtaining Software</h2>
 
-<p>For the actual virtualization software, I went with <a href="https://www.virtualbox.org/">VirtualBox</a>. It&rsquo;s not quite as polished as something like VMWare, but it&rsquo;s powerful, cross-platform, and free. For the GNU/Linux distribution, I went with <a href="http://lubuntu.net/">Lubuntu</a>, which is based on <a href="http://www.ubuntu.com/desktop">Ubuntu</a> but uses the light-weight <a href="http://lxde.org/">LXDE</a> desktop environment. Lubuntu is a good fit because it was designed with resource-constrained systems in mind but is largely compatible with Ubuntu, which has a large, active, and helpful community. Since I decided I could only devote 1GB of RAM to the birtual machine, I grabbed the 32-bit version of Lubuntu from the <a href="https://help.ubuntu.com/community/Lubuntu/GetLubuntu#Standard_PC">official downloads page</a>.</p>
+<p>For the actual virtualization software, I went with <a href="https://www.virtualbox.org/">VirtualBox</a>. It&rsquo;s not quite as polished as something like VMWare, but it&rsquo;s powerful, cross-platform, and free. For the GNU/Linux distribution, I went with <a href="http://lubuntu.net/">Lubuntu</a>, which is based on <a href="http://www.ubuntu.com/desktop">Ubuntu</a> but uses the light-weight <a href="http://lxde.org/">LXDE</a> desktop environment. Lubuntu is a good fit because it was designed with resource-constrained systems in mind but is largely compatible with Ubuntu, which has a large, active, and helpful community. Since I decided I could only devote 1GB of RAM to the VM, I grabbed the 32-bit version of Lubuntu from the <a href="https://help.ubuntu.com/community/Lubuntu/GetLubuntu#Standard_PC">official downloads page</a>.</p>
 
 <h2>Creating the Virtual Machine</h2>
 
@@ -103,11 +103,11 @@ Please note: This video has been edited to reduce its overall length. The actual
 <ol>
 <li>Copy <code>VBoxGuestAdditions.iso</code> image from the VirtualBox directory to the root directory. You can do this through Finder, but the following terminal command also works: <code>sudo cp /Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso ~/</code></li>
 <li>Start the VM and log in</li>
-<li>On the VirtualBox menu, go to `Devices > CD/DVD Devices > Choose a virtual CD/DVD disk file&hellip;</li>
+<li>On the VirtualBox menu, go to <code>Devices &gt; CD/DVD Devices &gt; Choose a virtual CD/DVD disk file...</code></li>
 <li>Navigate to the root directory and select the <code>VBoxGuestAdditions.iso</code> file you copied there in step 1</li>
 <li>In the VM, close the autorun prompt that appears after a few moments and press <code>Ctrl + Alt + T</code> to open LXTerminal</li>
-<li>Type <code>cd ../../media/USER</code>, where USER is your username (mine is &ldquo;don&rdquo;), to change into the VBoxGuestAdditions.iso directory</li>
-<li>Type <code>ls</code> to show the contents of that directory. There should only be one directory, called something like <code>VBOXADDITIONS_4.3.20_96996</code> (it changes with each version). Type <code>cd</code> followed by a space and then the name of that directory to enter it. In practice, you can probably just type <code>cd V</code>, and then press tab to auto-complete the filename, and then press enter</li>
+<li>Type <code>cd ../../media/USER</code>, where <code>USER</code> is your username (mine is &ldquo;don&rdquo;), to change into the VBoxGuestAdditions.iso directory</li>
+<li>Type <code>ls</code> to show the contents of that directory. There should only be one subdirectory, called something like <code>VBOXADDITIONS_4.3.20_96996</code> (the precise name changes with each version of VirtualBox). Type <code>cd</code> followed by a space and then the name of that directory to change into it. In practice, you can probably just type <code>cd V</code>, and then press tab to auto-complete the filename, and then press enter</li>
 <li>Type <code>sudo apt-get update</code> to grab any updates to packages installed on your system</li>
 <li>Type <code>sudo apt-get upgrade</code> to install those updates</li>
 <li>Type <code>sudo apt-get install dkms</code> to install <a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">dkms</a></li>
