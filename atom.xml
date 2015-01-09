@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2014-12-24T18:30:18-05:00</updated>
+  <updated>2015-01-09T12:18:38-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -12,6 +12,103 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Corporate Development Environment, Part III: Customizing Sublime Text]]></title>
+    <link href="http://doneallison.github.io/blog/2015/01/09/customizing-sublime-text/"/>
+    <updated>2015-01-09T12:16:58-05:00</updated>
+    <id>http://doneallison.github.io/blog/2015/01/09/customizing-sublime-text</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>In my last two posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a> and <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to continue that series by walking through the process of installing and customizing <a href="http://www.sublimetext.com/">Sublime Text</a>, my favorite text editor.<!--more--></p>
+
+<h2>Install Sublime Text</h2>
+
+<p>My first step was to install Sublime Text using <a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt-get</a>. The following steps (based <a href="http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3">an Ask Ubuntu answer by Jared Burrows</a>) worked nicely:</p>
+
+<ol>
+<li>Since the official Ubuntu repositories do not contain the Sublime Text package, we have to use the <code>add-apt-repository</code> command to add a <a href="http://en.wikipedia.org/wiki/Personal_Package_Archive">PPA</a> (in this case that of <a href="http://www.webupd8.org/">WebUpd8</a>) that contains the package. Open LXTerminal and type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-3</code>. If you prefer Sublime Text 2, type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-2</code> instead.</li>
+<li>Type <code>sudo apt-get update</code> to update apt-get&rsquo;s database of packages that can be installed and where they can be installed from</li>
+<li>Type <code>sudo apt-get install sublime-text-installer</code> to actually install the Sublime Text package. If you&rsquo;re installing Sublime Text 2, the command is <code>sudo apt-get install sublime-text</code></li>
+</ol>
+
+
+<h2>Register Sublime Text</h2>
+
+<p>As its nag screen will remind you, &ldquo;Sublime Text 2 may be downloaded and evaluated for free, however a license must be purchased for continued use.&rdquo; When you <a href="https://www.sublimetext.com/buy">buy a license</a>, you can get rid of the nag screen and the &ldquo;UNREGISTERED&rdquo; label by opening Sublime Text, clicking on <code>Help &gt; Enter License</code>, and then pasting your license into the box that appears (including the <code>----- BEGIN LICENSE -----</code> and <code>----- END LICENSE -----</code> lines).</p>
+
+<h2>Set Personal Preferences</h2>
+
+<p>To manage settings, Sublime Text uses configuration files rather than checkboxes and menus. Accordingly, setting preferences (e.g., font size, color scheme, etc.) requires manually editing a configuration file. Although that may seem intimidating if you&rsquo;re accustomed to checkboxes and menus, it&rsquo;s actually straightforward and much more convenient when you&rsquo;re configuring a new system. For example, since I already use Sublime Text on my Macbook Pro, all I had to do was copy my existing settings (a relatively short chunk of text) and then paste them into the configuration file for the version of Sublime Text installed on my VM.</p>
+
+<p>I&rsquo;ll provide my settings below, but chances are you&rsquo;ll want to select your own font, color scheme, etc. You can do so as follows:</p>
+
+<ol>
+<li>Open Sublime Text</li>
+<li>Choose the <code>Settings - User</code> option on the <code>Preferences</code> menu. This will open a file with some curly braces preceded by the following comment: &ldquo;Settings in here override those in &#8220;Default/Preferences.sublime-settings&rdquo;, and are overridden in turn by file type specific settings.&#8221;</li>
+<li>Choose the <code>Settings - Default</code> option on the <code>Preferences</code> menu. This will open another file with a range of possible settings. As a comment at the top of the file notes, you shouldn&rsquo;t edit this file directly. However, you should browse through an evaluate the types of things you can customize. When you see an option you&rsquo;d like to change, copy it to the <code>Settings - User</code> file and give it your desired value. Then, when you open Sublime Text, the <code>Settings - User</code> file will override the <code>Settings - Default</code> file and use your preferred settings</li>
+<li>When you&rsquo;ve finished making changes, save and then close the <code>Settings - User</code> file</li>
+</ol>
+
+
+<p>Here are my current settings:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>  "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+</span><span class='line'>  "font_face": "DejaVu Sans Mono",
+</span><span class='line'>  "font_size": 14,
+</span><span class='line'>  "ignored_packages":
+</span><span class='line'>  [
+</span><span class='line'>      "Vintage"
+</span><span class='line'>  ],
+</span><span class='line'>  "scroll_past_end": true,
+</span><span class='line'>  "tab_size": 2,
+</span><span class='line'>  "word_wrap": true
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since Lubuntu does not have my beloved Consolas installed, and since I didn&rsquo;t want to go through the trouble of finding and installing it, I chose DejaVu Sans Mono instead. It&rsquo;s been treating me well enough so far.</p>
+
+<h2>Install Package Control</h2>
+
+<p>As their website states, <a href="https://packagecontrol.io/">Package Control</a> is a &ldquo;Sublime Text package manager that makes it exceedingly simple to find, install and keep packages up-to-date.&rdquo; Since the specific installation instructions vary slightly with different releases of Package Control, I&rsquo;ll just link to the <a href="https://packagecontrol.io/installation#st3">official installation page</a>.</p>
+
+<h2>Install JSHint Package</h2>
+
+<p>As I outlined in my post on debugging JavaScript, I find a JavaScript linter invaluable for writing better JavaScript code. Accordingly, I like to use <a href="http://jshint.com/">JSHint</a>, a tool that helps improve the quality of your JavaScript code, in Sublime Text. It can be installed through Package Control as follows:</p>
+
+<ol>
+<li>Press <code>Ctrl + Shift + P</code> to bring up the Sublime Text Command Palette</li>
+<li>Begin typing &ldquo;package&rdquo; until &ldquo;Package Control: Install Packages&rdquo; is visible</li>
+<li>Select &ldquo;Package Control: Install Packages&rdquo;</li>
+<li>In the menu that appears, type &ldquo;jshint&rdquo;</li>
+<li>Select &ldquo;JSHint&rdquo;</li>
+</ol>
+
+
+<p>If you follow these instructions, the JSHint package will automatically annotate the code in any <code>.js</code> file you edit with helpful hints about missing or unnecessary semicolons, duplicate variable declarations, and other common mistakes.</p>
+
+<h2>Other Customizations</h2>
+
+<p>Inevitably, you will come up with lots of other customizations you&rsquo;ll want to make to your own installation of SublimeText. The steps in this post, however - especially installing Package Control - are enough to get started.</p>
+
+<h2>Coming Up&hellip;</h2>
+
+<p>Developers often have to switch rapidly between a text editor, a console, a web browser, and other programs. Accordingly, effective <a href="http://en.wikipedia.org/wiki/Window_manager">window management</a> is an important part of a productive workflow. In my next post, I&rsquo;ll cover the steps needed to create <a href="http://en.wikipedia.org/wiki/Windows_Aero">Aero</a>-like <a href="http://windows.microsoft.com/en-us/windows7/products/features/snap">snap</a> functionality in Lubuntu.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Corporate Development Environment, Part II: Customizing the Command Line]]></title>
