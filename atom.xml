@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2015-01-09T12:18:38-05:00</updated>
+  <updated>2015-01-09T12:25:55-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -27,7 +27,7 @@
 <p>My first step was to install Sublime Text using <a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt-get</a>. The following steps (based <a href="http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3">an Ask Ubuntu answer by Jared Burrows</a>) worked nicely:</p>
 
 <ol>
-<li>Since the official Ubuntu repositories do not contain the Sublime Text package, we have to use the <code>add-apt-repository</code> command to add a <a href="http://en.wikipedia.org/wiki/Personal_Package_Archive">PPA</a> (in this case that of <a href="http://www.webupd8.org/">WebUpd8</a>) that contains the package. Open LXTerminal and type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-3</code>. If you prefer Sublime Text 2, type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-2</code> instead.</li>
+<li>Since the official Ubuntu repositories do not contain the Sublime Text package, we have to use the <code>add-apt-repository</code> command to add a <a href="http://en.wikipedia.org/wiki/Personal_Package_Archive">PPA</a> (in this case that of <a href="http://www.webupd8.org/">WebUpd8</a>) that contains the package. Open LXTerminal and type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-3</code>. If you prefer Sublime Text 2, type <code>sudo add-apt-repository ppa:webupd8team/sublime-text-2</code> instead</li>
 <li>Type <code>sudo apt-get update</code> to update apt-get&rsquo;s database of packages that can be installed and where they can be installed from</li>
 <li>Type <code>sudo apt-get install sublime-text-installer</code> to actually install the Sublime Text package. If you&rsquo;re installing Sublime Text 2, the command is <code>sudo apt-get install sublime-text</code></li>
 </ol>
@@ -35,7 +35,7 @@
 
 <h2>Register Sublime Text</h2>
 
-<p>As its nag screen will remind you, &ldquo;Sublime Text 2 may be downloaded and evaluated for free, however a license must be purchased for continued use.&rdquo; When you <a href="https://www.sublimetext.com/buy">buy a license</a>, you can get rid of the nag screen and the &ldquo;UNREGISTERED&rdquo; label by opening Sublime Text, clicking on <code>Help &gt; Enter License</code>, and then pasting your license into the box that appears (including the <code>----- BEGIN LICENSE -----</code> and <code>----- END LICENSE -----</code> lines).</p>
+<p>As its nag screen will remind you, &ldquo;Sublime Text may be downloaded and evaluated for free, however a license must be purchased for continued use.&rdquo; When you <a href="https://www.sublimetext.com/buy">buy a license</a>, you can get rid of the nag screen and the &ldquo;UNREGISTERED&rdquo; label by opening Sublime Text, clicking on <code>Help &gt; Enter License</code>, and then pasting your license into the box that appears (including the <code>----- BEGIN LICENSE -----</code> and <code>----- END LICENSE -----</code> lines).</p>
 
 <h2>Set Personal Preferences</h2>
 
@@ -45,8 +45,8 @@
 
 <ol>
 <li>Open Sublime Text</li>
-<li>Choose the <code>Settings - User</code> option on the <code>Preferences</code> menu. This will open a file with some curly braces preceded by the following comment: &ldquo;Settings in here override those in &#8220;Default/Preferences.sublime-settings&rdquo;, and are overridden in turn by file type specific settings.&#8221;</li>
-<li>Choose the <code>Settings - Default</code> option on the <code>Preferences</code> menu. This will open another file with a range of possible settings. As a comment at the top of the file notes, you shouldn&rsquo;t edit this file directly. However, you should browse through an evaluate the types of things you can customize. When you see an option you&rsquo;d like to change, copy it to the <code>Settings - User</code> file and give it your desired value. Then, when you open Sublime Text, the <code>Settings - User</code> file will override the <code>Settings - Default</code> file and use your preferred settings</li>
+<li>Choose the <code>Settings - User</code> option on the <code>Preferences</code> menu. This will open a file with some curly braces preceded by the following comment: &ldquo;Settings in here override those in <code>Default/Preferences.sublime-settings</code>, and are overridden in turn by file type specific settings.&rdquo;</li>
+<li>Choose the <code>Settings - Default</code> option on the <code>Preferences</code> menu. This will open another file with a range of possible settings. As a comment at the top of the file notes, you shouldn&rsquo;t edit this file directly. However, you should browse through and evaluate the types of things you can customize. When you see an option you&rsquo;d like to change, copy it to the <code>Settings - User</code> file and give it your desired value. Then, when you open Sublime Text, the <code>Settings - User</code> file will override the <code>Settings - Default</code> file and use your preferred settings</li>
 <li>When you&rsquo;ve finished making changes, save and then close the <code>Settings - User</code> file</li>
 </ol>
 
@@ -87,7 +87,7 @@
 
 <h2>Install JSHint Package</h2>
 
-<p>As I outlined in my post on debugging JavaScript, I find a JavaScript linter invaluable for writing better JavaScript code. Accordingly, I like to use <a href="http://jshint.com/">JSHint</a>, a tool that helps improve the quality of your JavaScript code, in Sublime Text. It can be installed through Package Control as follows:</p>
+<p>As I outlined in <a href="http://doneallison.com/blog/2014/11/17/debugging-javascript/">my post on debugging JavaScript</a>, I find a JavaScript <a href="http://en.wikipedia.org/wiki/Lint_%28software%29">linter</a> invaluable for writing better JavaScript code. Accordingly, I like to use <a href="http://jshint.com/">JSHint</a>, a tool that helps improve the quality of your JavaScript code, in Sublime Text. It can be installed through Package Control as follows:</p>
 
 <ol>
 <li>Press <code>Ctrl + Shift + P</code> to bring up the Sublime Text Command Palette</li>
@@ -98,7 +98,7 @@
 </ol>
 
 
-<p>If you follow these instructions, the JSHint package will automatically annotate the code in any <code>.js</code> file you edit with helpful hints about missing or unnecessary semicolons, duplicate variable declarations, and other common mistakes.</p>
+<p>If you follow these instructions, the JSHint package will be installed and thereafter will automatically annotate the code in any <code>.js</code> file you edit with helpful hints about missing or unnecessary semicolons, duplicate variable declarations, and other common mistakes.</p>
 
 <h2>Other Customizations</h2>
 
