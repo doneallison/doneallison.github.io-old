@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2015-01-09T12:25:55-05:00</updated>
+  <updated>2015-01-10T11:36:13-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -12,6 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Corporate Development Environment, Part IV: Creating Aero-Like Snap Functionality in Lubuntu]]></title>
+    <link href="http://doneallison.github.io/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/"/>
+    <updated>2015-01-10T11:22:49-05:00</updated>
+    <id>http://doneallison.github.io/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>In my last three posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a>, <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a>, and <a href="http://doneallison.com/blog/2015/01/09/customizing-sublime-text/">customizing Sublime Text</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to conclude that series by outlining the process of creating <a href="http://en.wikipedia.org/wiki/Windows_Aero">Aero</a>-like <a href="http://windows.microsoft.com/en-us/windows7/products/features/snap">window snap</a> functionality in Lubuntu.<!--more--></p>
+
+<h2>Editing the OpenBox Configuration File</h2>
+
+<p>The process is surprisingly straightforward. All we need to do is open a configuration file for <a href="http://openbox.org/wiki/Main_Page">OpenBox</a>, Lubuntu&rsquo;s default window manager, and add a few lines that describe the intended functionality. The following steps worked nicely for me and are based off an <a href="http://ubuntuforums.org/showthread.php?t=2076433">Ubuntu Forums post</a> by ronniew (I made some small changes to the code, but the bulk of it came from ronniew&rsquo;s post).</p>
+
+<ol>
+<li>Open the OpenBox configuration file in Sublime Text by opening LXTerminal and typing <code>subl ~/.config/openbox/lubuntu-rc.xml</code></li>
+<li>Find the line that reads <code>&lt;chainQuitKey&gt;C-g&lt;/chainQuitKey&gt;</code> (in the default config file on my installation of Lubuntu, this is line 180)</li>
+<li><p>Under that line, paste the following text:</p>
+
+<pre><code> &lt;!-- Aero Snap for Openbox --&gt;
+     &lt;keybind key="W-Left"&gt;        # HalfLeftScreen
+       &lt;action name="Raise"/&gt;
+       &lt;action name="UnmaximizeFull"/&gt;
+       &lt;action name="MoveResizeTo"&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;0&lt;/y&gt;
+         &lt;height&gt;100%&lt;/height&gt;
+         &lt;width&gt;50%&lt;/width&gt;
+       &lt;/action&gt;
+     &lt;/keybind&gt;
+     &lt;keybind key="W-Right"&gt;        # HalfRightScreen
+       &lt;action name="Raise"/&gt;   
+       &lt;action name="UnmaximizeFull"/&gt;
+       &lt;action name="MoveResizeTo"&gt;
+         &lt;x&gt;-0&lt;/x&gt;
+         &lt;y&gt;0&lt;/y&gt;
+         &lt;height&gt;100%&lt;/height&gt;
+         &lt;width&gt;50%&lt;/width&gt;
+       &lt;/action&gt;
+     &lt;/keybind&gt;
+     &lt;keybind key="W-Up"&gt;        # HalfUpperScreen
+       &lt;action name="Raise"/&gt;      
+       &lt;action name="UnmaximizeFull"/&gt;
+       &lt;action name="MoveResizeTo"&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;0&lt;/y&gt;
+         &lt;width&gt;100%&lt;/width&gt;
+         &lt;height&gt;50%&lt;/height&gt;
+       &lt;/action&gt;
+     &lt;/keybind&gt;
+     &lt;keybind key="W-Down"&gt;        # HalfLowerScreen
+       &lt;action name="Raise"/&gt;
+       &lt;action name="UnmaximizeFull"/&gt;
+       &lt;action name="MoveResizeTo"&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;-0&lt;/y&gt;
+         &lt;width&gt;100%&lt;/width&gt;
+         &lt;height&gt;50%&lt;/height&gt;
+       &lt;/action&gt;
+     &lt;/keybind&gt;
+     &lt;keybind key="W-f"&gt;        #Full Screen
+       &lt;action name="Raise"/&gt;
+       &lt;action name="ToggleMaximizeFull"/&gt;
+     &lt;/keybind&gt;
+</code></pre></li>
+<li>Save and then close the configuration file</li>
+<li>Go back into LXTerminal and type <code>openbox --restart</code></li>
+</ol>
+
+
+<p>As is possible in Windows 7, you should now be able to snap a window to any &ldquo;half&rdquo; of the screen (left, right, top, bottom) by pressing the super key (Windows key on PC; Command key on Mac) and the appropriate arrow key. You should also be able to make a window full screen by pressing <code>Super + F</code>.</p>
+
+<p>I find these shortcuts valuable for times when I want to write (e.g., in Sublime Text) while having another document open for reference (e.g., in a web browser), or when I want to test code (e.g., in LXTerminal) while I edit it (e.g., in Sublime Text).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Corporate Development Environment, Part III: Customizing Sublime Text]]></title>
@@ -205,7 +280,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Creating a Development Environment on My Company-Issued Laptop]]></title>
+    <title type="html"><![CDATA[Corporate Development Environment, Part I: Creating a Development Environment on My Company-Issued Laptop]]></title>
     <link href="http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/"/>
     <updated>2014-12-23T22:21:47-05:00</updated>
     <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop</id>
