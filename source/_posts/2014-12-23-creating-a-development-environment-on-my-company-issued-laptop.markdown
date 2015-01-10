@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Creating a Development Environment on My Company-Issued Laptop"
+title: "Corporate Development Environment, Part I: Creating a Development Environment on My Company-Issued Laptop"
 date: 2014-12-23 22:21:47 -0500
 comments: true
 categories: 
