@@ -4,7 +4,7 @@
   <title><![CDATA[Don Allison]]></title>
   <link href="http://doneallison.github.io/atom.xml" rel="self"/>
   <link href="http://doneallison.github.io/"/>
-  <updated>2015-01-10T11:36:13-05:00</updated>
+  <updated>2015-01-18T21:28:13-05:00</updated>
   <id>http://doneallison.github.io/</id>
   <author>
     <name><![CDATA[Don Allison]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Corporate Development Environment, Part IV: Creating Aero-Like Snap Functionality in Lubuntu]]></title>
+    <title type="html"><![CDATA[Creating Aero-Like Snap Functionality in Lubuntu]]></title>
     <link href="http://doneallison.github.io/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/"/>
     <updated>2015-01-10T11:22:49-05:00</updated>
     <id>http://doneallison.github.io/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu</id>
@@ -89,7 +89,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Corporate Development Environment, Part III: Customizing Sublime Text]]></title>
+    <title type="html"><![CDATA[Customizing Sublime Text]]></title>
     <link href="http://doneallison.github.io/blog/2015/01/09/customizing-sublime-text/"/>
     <updated>2015-01-09T12:16:58-05:00</updated>
     <id>http://doneallison.github.io/blog/2015/01/09/customizing-sublime-text</id>
@@ -186,7 +186,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Corporate Development Environment, Part II: Customizing the Command Line]]></title>
+    <title type="html"><![CDATA[Customizing the Command Line]]></title>
     <link href="http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line/"/>
     <updated>2014-12-24T18:09:21-05:00</updated>
     <id>http://doneallison.github.io/blog/2014/12/24/customizing-the-command-line</id>
@@ -280,7 +280,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Corporate Development Environment, Part I: Creating a Development Environment on My Company-Issued Laptop]]></title>
+    <title type="html"><![CDATA[Creating a Development Environment on My Company-Issued Laptop]]></title>
     <link href="http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/"/>
     <updated>2014-12-23T22:21:47-05:00</updated>
     <id>http://doneallison.github.io/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop</id>
