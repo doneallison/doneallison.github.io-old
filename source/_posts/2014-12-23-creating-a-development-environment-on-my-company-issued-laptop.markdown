@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Corporate Development Environment, Part I: Creating a Development Environment on My Company-Issued Laptop"
+title: "Creating a Development Environment on My Company-Issued Laptop"
 date: 2014-12-23 22:21:47 -0500
 comments: true
-categories: 
+categories:
 ---
 ##Background and Motivation
 Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we're all eager to begin earning money again. For a variety of reasons, I've decided to return to the position I held before coming to The Flatiron School. Although I'm really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.<!--more-->

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Corporate Development Environment, Part II: Customizing the Command Line"
+title: "Customizing the Command Line"
 date: 2014-12-24 18:09:21 -0500
 comments: true
 categories: 

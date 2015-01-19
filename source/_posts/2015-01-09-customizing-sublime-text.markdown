@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Corporate Development Environment, Part III: Customizing Sublime Text"
+title: "Customizing Sublime Text"
 date: 2015-01-09 12:16:58 -0500
 comments: true
 categories: 

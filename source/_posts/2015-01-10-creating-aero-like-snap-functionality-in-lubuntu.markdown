@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Corporate Development Environment, Part IV: Creating Aero-Like Snap Functionality in Lubuntu"
+title: "Creating Aero-Like Snap Functionality in Lubuntu"
 date: 2015-01-10 11:22:49 -0500
 comments: true
 categories: 
