@@ -1,380 +1,364 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<meta charset="utf-8">
-	<title>Essays and Projects  | Don Allison</title>
+  <meta charset="utf-8">
+  <title>Don Allison</title>
+  <meta name="author" content="Don Allison">
 
-<meta name="author" content="Don Allison"> 
+  
+  <meta name="description" content="Introduction In my last three posts, I&rsquo;ve walked through the process of creating a Lubuntu virtual machine (VM), customizing its command line, &hellip;">
+  
 
-<meta name="description" content="Introduction In my last three posts, I&rsquo;ve walked through the process of creating a Lubuntu virtual machine (VM), customizing its command line &hellip;"> <meta name="keywords" content="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="canonical" href="http://doneallison.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Don Allison" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
+<!--- MathJax Configuration -->
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
 
-	<link href="/atom.xml" rel="alternate" title="Don Allison" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
-
-	
 </head>
 
-
-
-<body>
-	<header id="header" class="inner"><h1><a href="/">Don Allison</a></h1>
-<h4>Essays and Projects</h4>
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/portfolio">Portfolio</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/portfolio">Portfolio</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="https://www.google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:doneallison.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Don Allison</a></h1>
+  
+    <h2>Essays and Projects</h2>
+  
+</hgroup>
 
 </header>
-
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/">
-		
-			Creating Aero-Like Snap Functionality in Lubuntu</a>
-	</h2>
-	<div class="entry-content">
-		<h2>Introduction</h2>
-
-<p>In my last three posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a>, <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a>, and <a href="http://doneallison.com/blog/2015/01/09/customizing-sublime-text/">customizing Sublime Text</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to conclude that series by outlining the process of creating <a href="http://en.wikipedia.org/wiki/Windows_Aero">Aero</a>-like <a href="http://windows.microsoft.com/en-us/windows7/products/features/snap">window snap</a> functionality in Lubuntu.
-		
-		<a href="/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
+  <nav role="navigation"><ul class="subscribe" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewbox="0 0 100 100"><path class="social" d="M 13.310204,73.332654 C 5.967347,73.332654 0,79.322448 0,86.621428 c 0,7.338776 5.967347,13.262246 13.310204,13.262246 7.370408,0 13.328572,-5.92245 13.328572,-13.262246 0,-7.29898 -5.958164,-13.288774 -13.328572,-13.288774 z M 0.01530612,33.978572 V 53.143878 C 12.493878,53.143878 24.229592,58.02347 33.068368,66.865306 41.894898,75.685714 46.767346,87.47449 46.767346,100 h 19.25 C 66.017346,63.592858 36.4,33.979592 0.01530612,33.978572 l 0,0 z M 0.03877552,0 V 19.17449 C 44.54796,19.17551 80.77551,55.437756 80.77551,100 H 100 C 100,44.87653 55.15102,0 0.03877552,0 z"></path></svg></a></li>
   
-
-
-<time datetime="2015-01-10T11:22:49-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/01/09/customizing-sublime-text/">
-		
-			Customizing Sublime Text</a>
-	</h2>
-	<div class="entry-content">
-		<h2>Introduction</h2>
-
-<p>In my last two posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a> and <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to continue that series by walking through the process of installing and customizing <a href="http://www.sublimetext.com/">Sublime Text</a>, my favorite text editor.
-		
-		<a href="/blog/2015/01/09/customizing-sublime-text/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
+</ul>
   
-
-
-<time datetime="2015-01-09T12:16:58-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/12/24/customizing-the-command-line/">
-		
-			Customizing the Command Line</a>
-	</h2>
-	<div class="entry-content">
-		<h2>Introduction</h2>
-
-<p>In my <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">last post</a>, I used VirtualBox to create a Lubuntu virtual machine (VM) on a Macbook Pro host. I undertook this project because I wanted to create a POSIX-compliant development environment that will work on my company-issued Lenovo T440. Although I&rsquo;ve technically cleared that hurdle at this point, I wanted to customize the VM a bit more so it better resembles the development environment I know and love on my Macbook Pro. Since software developers spend a lot of time using the command line, the next logical step was to customize <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">Bash</a> and <a href="http://en.wikipedia.org/wiki/LXDE#Software_components">LXTerminal</a>.
-		
-		<a href="/blog/2014/12/24/customizing-the-command-line/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
   
-
-
-<time datetime="2014-12-24T18:09:21-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">
-		
-			Creating a Development Environment on My Company-Issued Laptop</a>
-	</h2>
-	<div class="entry-content">
-		<h2>Background and Motivation</h2>
-
-<p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.
-		
-		<a href="/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
   
-
-
-<time datetime="2014-12-23T22:21:47-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/11/17/debugging-javascript/">
-		
-			Debugging JavaScript</a>
-	</h2>
-	<div class="entry-content">
-		<h2>The Problem</h2>
-
-<p>Ever since my class at <a href="http://flatironschool.com/">The Flatiron School</a> took a detour into JavaScript from Ruby and Rails, I&rsquo;ve found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don&rsquo;t always know where to put my semicolons, curly braces, <code>var</code> keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby.
-		
-		<a href="/blog/2014/11/17/debugging-javascript/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
   
-
-
-<time datetime="2014-11-17T23:29:52-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/11/03/my-first-web-app-topicana/">
-		
-			My First Web App: Topicana</a>
-	</h2>
-	<div class="entry-content">
-		<h2>Introduction</h2>
-
-<p>After writing my <a href="http://doneallison.com/blog/2014/10/20/topic-modeling-my-text-messages/">last post</a>, I wanted to explore topic modeling and the <a href="http://mallet.cs.umass.edu/">MAchine Learning for LanguagE Toolkit (MALLET)</a> a bit further. Specifically, I wanted to explore the possibility of liberating MALLET from several usability issues.
-		
-		<a href="/blog/2014/11/03/my-first-web-app-topicana/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
   
-
-
-<time datetime="2014-11-03T23:57:35-05:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/20/topic-modeling-my-text-messages/">
-		
-			Topic Modeling My Text Messages</a>
-	</h2>
-	<div class="entry-content">
-		<p>Today marks exactly one year since my lovely girlfriend and I began dating. In honor of that occasion (and inspired by posts from <a href="http://blog.kanaabe.com/blog/2014/10/16/the-nokogiri-saw/">Kana Abe</a> and <a href="http://adashofdata.com/2014/10/14/how-text-messages-change-from-dating-to-marriage/">Alice Zhao</a>), I decided to try building a <a href="http://en.wikipedia.org/wiki/Topic_model">topic model</a> of all the text messages we&rsquo;ve sent to each other using <a href="https://www.google.com/settings/takeout">Google Takeout</a>, Ruby, <a href="http://www.nokogiri.org/">Nokogiri</a> (an HTML parser), and <a href="http://mallet.cs.umass.edu/">MALLET</a> (a Java-based command line program for natural language processing). The idea was that I might be able to extract some insight about what we&rsquo;ve been talking about during our relationship and how it has changed over time, much like Professor Robert K. Nelson did for the Civil War in his project <a href="http://dsl.richmond.edu/dispatch/">Mining the Dispatch</a>.
-		
-		<a href="/blog/2014/10/20/topic-modeling-my-text-messages/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
   
+  
+    
+      <form action="https://www.google.com/search" method="get">
+        <fieldset role="search">
+          <input type="hidden" name="q" value="site:doneallison.github.io" />
+    
+          <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+        </fieldset>
+      </form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
 
-
-<time datetime="2014-10-20T07:48:26-04:00" pubdate data-updated="true"></time></div>
-	
-
-
-	
-</div></article>
-
-<nav id="pagenavi">
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/">Creating Aero-Like Snap Functionality in Lubuntu</a></h1>
     
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
-</nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2015
+      <p class="meta">
+        
 
-    Don Allison
 
-<br>
-Powered by Octopress.
+
+
+<time class='entry-date' datetime='2015-01-10T11:22:49-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:22 am</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>In my last three posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a>, <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a>, and <a href="http://doneallison.com/blog/2015/01/09/customizing-sublime-text/">customizing Sublime Text</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to conclude that series by outlining the process of creating <a href="http://en.wikipedia.org/wiki/Windows_Aero">Aero</a>-like <a href="http://windows.microsoft.com/en-us/windows7/products/features/snap">window snap</a> functionality in Lubuntu.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/01/10/creating-aero-like-snap-functionality-in-lubuntu/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/09/customizing-sublime-text/">Customizing Sublime Text</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-09T12:16:58-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:16 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>In my last two posts, I&rsquo;ve walked through the process of <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">creating a Lubuntu virtual machine (VM)</a> and <a href="http://doneallison.com/blog/2014/12/24/customizing-the-command-line/">customizing its command line</a> as part of my effort to make a POSIX-compliant development environment on my company-issued Lenovo T440. In this post, I&rsquo;m going to continue that series by walking through the process of installing and customizing <a href="http://www.sublimetext.com/">Sublime Text</a>, my favorite text editor.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/01/09/customizing-sublime-text/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/24/customizing-the-command-line/">Customizing the Command Line</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-24T18:09:21-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:09 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>In my <a href="http://doneallison.com/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">last post</a>, I used VirtualBox to create a Lubuntu virtual machine (VM) on a Macbook Pro host. I undertook this project because I wanted to create a POSIX-compliant development environment that will work on my company-issued Lenovo T440. Although I&rsquo;ve technically cleared that hurdle at this point, I wanted to customize the VM a bit more so it better resembles the development environment I know and love on my Macbook Pro. Since software developers spend a lot of time using the command line, the next logical step was to customize <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">Bash</a> and <a href="http://en.wikipedia.org/wiki/LXDE#Software_components">LXTerminal</a>.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/24/customizing-the-command-line/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">Creating a Development Environment on My Company-Issued Laptop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-23T22:21:47-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>10:21 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Background and Motivation</h2>
+
+<p>Since The Flatiron School Science Fair a couple weeks ago, my attention - like that of most of my classmates - has turned to finding a job. After shelling out for tuition and going three months without income, we&rsquo;re all eager to begin earning money again. For a variety of reasons, I&rsquo;ve decided to return to the position I held before coming to The Flatiron School. Although I&rsquo;m really excited about this move, it does come with an unfortunate downside: having to reacclimate to my company-issued Lenovo T440 after having spent a glorious three months with my beloved Macbook Pro.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/23/creating-a-development-environment-on-my-company-issued-laptop/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/17/debugging-javascript/">Debugging JavaScript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-17T23:29:52-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:29 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>The Problem</h2>
+
+<p>Ever since my class at <a href="http://flatironschool.com/">The Flatiron School</a> took a detour into JavaScript from Ruby and Rails, I&rsquo;ve found it harder to debug my code. I think this has happened for a couple of reasons. First, JavaScript has a fussier syntax than Ruby, and, as a beginner, I don&rsquo;t always know where to put my semicolons, curly braces, <code>var</code> keywords, etc. Second, JavaScript is highly permissive, and, as a result, its error messages tend to be less helpful than those of Ruby.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/17/debugging-javascript/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/03/my-first-web-app-topicana/">My First Web App: Topicana</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-03T23:57:35-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>11:57 pm</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>After writing my <a href="http://doneallison.com/blog/2014/10/20/topic-modeling-my-text-messages/">last post</a>, I wanted to explore topic modeling and the <a href="http://mallet.cs.umass.edu/">MAchine Learning for LanguagE Toolkit (MALLET)</a> a bit further. Specifically, I wanted to explore the possibility of liberating MALLET from several usability issues.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/03/my-first-web-app-topicana/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/20/topic-modeling-my-text-messages/">Topic Modeling My Text Messages</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-20T07:48:26-04:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:48 am</span></time>
+        
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today marks exactly one year since my lovely girlfriend and I began dating. In honor of that occasion (and inspired by posts from <a href="http://blog.kanaabe.com/blog/2014/10/16/the-nokogiri-saw/">Kana Abe</a> and <a href="http://adashofdata.com/2014/10/14/how-text-messages-change-from-dating-to-marriage/">Alice Zhao</a>), I decided to try building a <a href="http://en.wikipedia.org/wiki/Topic_model">topic model</a> of all the text messages we&rsquo;ve sent to each other using <a href="https://www.google.com/settings/takeout">Google Takeout</a>, Ruby, <a href="http://www.nokogiri.org/">Nokogiri</a> (an HTML parser), and <a href="http://mallet.cs.umass.edu/">MALLET</a> (a Java-based command line program for natural language processing). The idea was that I might be able to extract some insight about what we&rsquo;ve been talking about during our relationship and how it has changed over time, much like Professor Robert K. Nelson did for the Civil War in his project <a href="http://dsl.richmond.edu/dispatch/">Mining the Dispatch</a>.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/10/20/topic-modeling-my-text-messages/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Don Allison -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+  
 
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 
